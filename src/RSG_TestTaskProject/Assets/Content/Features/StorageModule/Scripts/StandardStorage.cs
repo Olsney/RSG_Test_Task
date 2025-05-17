@@ -14,17 +14,15 @@ namespace Content.Features.StorageModule.Scripts
         {
             _model = model;
         }
-
+        
         public event Action<Item> OnItemAdded;
         public event Action<Item> OnItemRemoved;
 
-        public List<Item> GetAllItems()
-        {
-            Debug.Log($"[STORAGE] Текущие предметы: {_model.GetAllItems().Count}");
+        public float CurrentWeight => _model.CurrentWeight;
+        public float MaxWeight => _model.MaxWeight;
 
-            
-            return _model.GetAllItems();
-        }
+        public List<Item> GetAllItems() => 
+            _model.GetAllItems();
 
         public bool TryAddItem(Item item)
         {

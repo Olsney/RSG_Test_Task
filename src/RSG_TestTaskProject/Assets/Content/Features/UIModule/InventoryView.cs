@@ -1,0 +1,30 @@
+﻿using TMPro;
+using UnityEngine;
+using Zenject;
+
+namespace Content.Features.UIModule
+{
+    public class InventoryView : MonoBehaviour, IInventoryView
+    {
+        [SerializeField] private TextMeshProUGUI _itemCountText;
+
+        private InventoryPresenter _presenter;
+
+        [Inject]
+        public void Construct(InventoryPresenter presenter)
+        {
+            _presenter = presenter;
+            _presenter.Init(this);
+        }
+
+        public void SetItemInfo(int itemsCount, float currentWeight, float maxWeight)
+        {
+            _itemCountText.text = $"Items count: {itemsCount};" +
+                                  $"\nCurrent weight: {currentWeight}" +
+                                  $"\nMax weight: {maxWeight}";
+        }
+
+        private void OnDestroy() => 
+            _presenter?.Detach();
+    }
+}

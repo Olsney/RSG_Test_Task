@@ -1,0 +1,40 @@
+﻿using System;
+using Content.Features.StorageModule.Scripts;
+
+namespace Content.Features.UIModule
+{
+    public class InventoryPresenter
+    {
+        private readonly IStorage _storage;
+        private IInventoryView _view;
+
+        public InventoryPresenter(IStorage storage)
+        {
+            _storage = storage;
+        }
+
+        public void Init(IInventoryView view)
+        {
+            _view = view;
+            UpdateView();
+
+            _storage.OnItemAdded += OnItemChanged;
+            _storage.OnItemRemoved += OnItemChanged;
+        }
+
+        public void OnDestroy()
+        {
+            _storage.OnItemAdded -= OnItemChanged;
+            _storage.OnItemRemoved -= OnItemChanged;
+        }
+
+        private void OnItemChanged(Item _) => 
+            UpdateView();
+
+        private void UpdateView()
+        {
+            _view.SetItemInfo(itemsCount: _storage.GetAllItems().Count,
+                currentWeight: _storage.CurrentWeight,
+                maxWeight: _storage.MaxWeight);
+        }
+    }

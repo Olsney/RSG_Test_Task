@@ -7,6 +7,8 @@ namespace Content.Features.StorageModule.Scripts
     {
         public event Action<Item> OnItemAdded;
         public event Action<Item> OnItemRemoved;
+        float CurrentWeight { get; }
+        float MaxWeight { get; }
         public List<Item> GetAllItems();
 
         public bool TryAddItem(Item item);
