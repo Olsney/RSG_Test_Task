@@ -15,8 +15,8 @@ namespace Content.Features.LootModule.Scripts
 
             foreach (ItemType itemType in loot.GetItemsInLoot())
             {
-                if (IsItemCollected(storage, itemType)) ;
-                collectedCount++;
+                if (IsItemCollected(storage, itemType))
+                    collectedCount++;
             }
 
             return collectedCount;
