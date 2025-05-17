@@ -8,7 +8,7 @@ namespace Content.Features.StorageModule.Scripts
     {
         private List<Item> _items = new List<Item>();
         private readonly StorageModel _model;
-        
+
         public StandardStorage(StorageModel model)
         {
             _model = model;
@@ -62,6 +62,5 @@ namespace Content.Features.StorageModule.Scripts
 
         private bool IsOverweight(Item item) =>
             _model.CurrentWeight + item.Weight > _model.MaxWeight;
-        }
     }
 }

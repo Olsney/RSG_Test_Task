@@ -16,12 +16,8 @@ namespace Content.Features.LootModule.Scripts
 
             foreach (ItemType itemType in loot.GetItemsInLoot())
             {
-                if (IsItemCollected(storage, itemType))
-                {
+                if (IsItemCollected(storage, itemType)) 
                     collectedCount++;
-                    
-                    Debug.Log("Подобрали лут успешно");
-                }
             }
 
             return collectedCount;
