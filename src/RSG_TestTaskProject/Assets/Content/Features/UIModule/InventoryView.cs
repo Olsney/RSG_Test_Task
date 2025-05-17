@@ -1,10 +1,9 @@
 ﻿using TMPro;
 using UnityEngine;
-using Zenject;
 
 namespace Content.Features.UIModule
 {
-    public class InventoryView : MonoBehaviour, IInventoryView
+    public class InventoryView : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _itemCountText;
         

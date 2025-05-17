@@ -27,6 +27,7 @@ namespace Content.Features.UIModule
             // Инстанцируем с DI — вызывает [Inject] у компонентов
             GameObject instance = _container.InstantiatePrefab(prefab);
             _container.InjectGameObject(instance);
+            instance.SetActive(true); // ⬅️ лишним не будет
             
             // Не уничтожать между сценами
             Object.DontDestroyOnLoad(instance);

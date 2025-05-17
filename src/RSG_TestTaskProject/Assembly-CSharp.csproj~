@@ -96,7 +96,6 @@
     <Compile Include="Assets\Content\Features\InteractionModule\Scripts\AttackInteractable.cs" />
     <Compile Include="Assets\Content\Features\StorageModule\Scripts\ItemFactory.cs" />
     <Compile Include="Assets\Core\AssetLoaderModule\Core\Scripts\IAddressablesAssetLoaderService.cs" />
-    <Compile Include="Assets\Content\Features\UIModule\UISpawner.cs" />
     <Compile Include="Assets\Content\Features\GameBootstrapModule\Scripts\Bootstraps\SurfaceSceneBootstrap.cs" />
     <Compile Include="Assets\Content\Features\DamageablesModule\Scripts\DamageableType.cs" />
     <Compile Include="Assets\Core\AssetLoaderModule\Core\Scripts\ResourceAssetLoaderService.cs" />
@@ -141,6 +140,7 @@
     <Compile Include="Assets\Core\AssetLoaderModule\Core\Scripts\IResourceAssetLoaderService.cs" />
     <Compile Include="Assets\Content\Features\GameBootstrapModule\Scripts\ProjectDI\BootstrapSceneContextInstaller.cs" />
     <Compile Include="Assets\Content\Features\StorageModule\Scripts\StandardStorage.cs" />
+    <Compile Include="Assets\Content\Features\UIModule\InventoryViewSpawner.cs" />
     <Compile Include="Assets\Content\Features\UIModule\InventoryView.cs" />
     <Compile Include="Assets\Core\StateMachineModule\Scripts\StateMachineBehaviour.cs" />
     <Compile Include="Assets\Content\Features\LootModule\Scripts\ILootService.cs" />
