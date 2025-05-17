@@ -3,7 +3,7 @@
     {
         private const float Capacity = 10;
         
-        public IStorage GetStorage() =>
-            new StandardStorage(maxWeight: Capacity);
+        // public IStorage GetStorage() =>
+        //     new StandardStorage(maxWeight: Capacity);
     }
 }

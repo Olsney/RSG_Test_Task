@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Content.Features.StorageModule.Scripts
 {
@@ -9,17 +10,42 @@ namespace Content.Features.StorageModule.Scripts
 
         private float _currentWeight;
 
-        public StorageModel(float maxWeight)
+        public StorageModel()
         {
-            _maxWeight = maxWeight;
+            _maxWeight = 30f;
             _currentWeight = 0f;
         }
 
-        public float CurrentWeight { get; private set; }
-        
+        public float CurrentWeight => _currentWeight;
         public float MaxWeight => _maxWeight;
-        public List<Item> Items => new List<Item>(_items);
-        
-        
+
+        public void Add(Item item)
+        {
+            _items.Add(item);
+            
+            _currentWeight += item.Weight;
+        }
+
+        public bool Remove(Item item)
+        {
+            if(_items.Remove(item);
+            
+            RemoveItemWeight(item);
+        }
+
+        public List<Item> GetAllItems() =>
+            _items.ToList();
+
+        private void RemoveItemWeight(Item item)
+        {
+            if (_currentWeight - item.Weight < 0)
+            {
+                _currentWeight = 0;
+
+                return;
+            }
+            
+            _currentWeight -= item.Weight;
+        }
     }
 }
