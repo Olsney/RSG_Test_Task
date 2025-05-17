@@ -1,10 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 namespace Content.Features.StorageModule.Scripts {
     public class StandardStorage : IStorage {
         private List<Item> _items = new List<Item>();
+
+        private float _maxWeight;
+        private float _currentWeight;
+
+        public StandardStorage(float maxWeight)
+        {
+            _maxWeight = maxWeight;
+            _currentWeight = 0f;
+        }
 
         public event Action<Item> OnItemAdded;
         public event Action<Item> OnItemRemoved;
@@ -12,24 +22,31 @@ namespace Content.Features.StorageModule.Scripts {
         public List<Item> GetAllItems() =>
             _items.ToList();
 
-        public void AddItem(Item item) {
+        public bool TryAddItem(Item item) {
             if(_items.Contains(item))
-                return;
+                return false;
+
+            if (IsWeightLimitExceeded(item))
+                return false;
         
             _items.Add(item);
+            AddNewItemWeight(item);
             OnItemAdded?.Invoke(item);
+
+            return true;
         }
 
         public void AddItems(List<Item> items) {
             foreach (Item item in items)
-                AddItem(item);
+                TryAddItem(item);
         }
 
         public void RemoveItem(Item item) {
             if(_items.Contains(item) is false)
                 return;
-
+            
             _items.Remove(item);
+            RemoveItemWeight(item);
             OnItemRemoved?.Invoke(item);
         }
 
@@ -41,6 +58,24 @@ namespace Content.Features.StorageModule.Scripts {
         public void RemoveAllItems() {
             foreach (Item item in _items)
                 RemoveItem(item);
+        }
+
+        private bool IsWeightLimitExceeded(Item item) => 
+            _currentWeight + item.Weight > _maxWeight;
+
+        private void AddNewItemWeight(Item item) => 
+            _currentWeight += item.Weight;
+
+        private void RemoveItemWeight(Item item)
+        {
+            if (_currentWeight - item.Weight < 0)
+            {
+                _currentWeight = 0;
+
+                return;
+            }
+            
+            _currentWeight -= item.Weight;
         }
     }
 }

@@ -54,7 +54,8 @@ namespace Content.Features.AIModule.Scripts.Entity.EntityBehaviours
 
             if (IsCollectedLootExist(collectedLootCount))
                 _loot.DestroyLoot();
-            
+
+
             StopMoving();
             OnBehaviorEnd?.Invoke();
         }
