@@ -1,21 +1,36 @@
 ﻿using System;
 using Content.Features.StorageModule.Scripts;
+using UnityEngine;
+using Zenject;
 
 namespace Content.Features.UIModule
 {
-    public class InventoryPresenter
+    public class InventoryPresenter : MonoBehaviour
     {
-        private readonly IStorage _storage;
-        private IInventoryView _view;
+        [SerializeField] private InventoryView _view;
+        
+        private IStorage _storage;
 
+        [Inject]
+        public void Construct(IStorage storage)
+        {
+            _storage = storage;
+
+            _storage.OnItemAdded += OnItemChanged;
+            _storage.OnItemRemoved += OnItemChanged;
+
+            UpdateView();
+        }
+        
         public InventoryPresenter(IStorage storage)
         {
             _storage = storage;
+
+            Init();
         }
 
-        public void Init(IInventoryView view)
+        public void Init()
         {
-            _view = view;
             UpdateView();
 
             _storage.OnItemAdded += OnItemChanged;
@@ -28,7 +43,7 @@ namespace Content.Features.UIModule
             _storage.OnItemRemoved -= OnItemChanged;
         }
 
-        private void OnItemChanged(Item _) => 
+        private void OnItemChanged(Item _) =>
             UpdateView();
 
         private void UpdateView()
@@ -38,3 +53,4 @@ namespace Content.Features.UIModule
                 maxWeight: _storage.MaxWeight);
         }
     }
+}

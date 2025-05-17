@@ -6,7 +6,7 @@ namespace Content.Features.UIModule
     {
         public override void InstallBindings()
         {
-            Container.BindInterfacesAndSelfTo<InventoryPresenter>()
+            Container.BindInterfacesAndSelfTo<InventoryPresenter>().AsSingle();
         }
     }
 }

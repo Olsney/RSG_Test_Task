@@ -1,0 +1,36 @@
+﻿using UnityEngine;
+using UnityEngine.AddressableAssets;
+using Zenject;
+
+namespace Content.Features.UIModule
+{
+    // Zenject вызовет этот класс сам при старте
+    public class InventoryViewSpawner : IInitializable
+    {
+        private readonly DiContainer _container;
+
+        public InventoryViewSpawner(DiContainer container)
+        {
+            _container = container;
+        }
+
+        public void Initialize()
+        {
+            LoadUIAsync();
+        }
+
+        private async void LoadUIAsync()
+        {
+            // Загружаем префаб по ключу из Addressables
+            GameObject prefab = await Addressables.LoadAssetAsync<GameObject>("InventoryUI").Task;
+
+            // Инстанцируем с DI — вызывает [Inject] у компонентов
+            GameObject instance = _container.InstantiatePrefab(prefab);
+            _container.InjectGameObject(instance);
+            instance.SetActive(true); // ⬅️ лишним не будет
+            
+            // Не уничтожать между сценами
+            Object.DontDestroyOnLoad(instance);
+        }
+    }
+}

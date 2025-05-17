@@ -82,6 +82,7 @@
     <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\IEntityBehaviourFactory.cs" />
     <Compile Include="Assets\Content\Features\DamageablesModule\Scripts\MonoDamageable.cs" />
     <Compile Include="Assets\Content\Features\InteractionModule\Scripts\Interactables\SimpleInteractable.cs" />
+    <Compile Include="Assets\Content\Features\UIModule\IInventoryView.cs" />
     <Compile Include="Assets\Content\Features\GameBootstrapModule\Scripts\Bootstraps\BootstrapSceneBootstrap.cs" />
     <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\IEntityDataService.cs" />
     <Compile Include="Assets\Content\Features\InteractionModule\Scripts\LootInteractable.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="Assets\Content\Features\InteractionModule\Scripts\AttackInteractable.cs" />
     <Compile Include="Assets\Content\Features\StorageModule\Scripts\ItemFactory.cs" />
     <Compile Include="Assets\Core\AssetLoaderModule\Core\Scripts\IAddressablesAssetLoaderService.cs" />
+    <Compile Include="Assets\Content\Features\UIModule\UISpawner.cs" />
     <Compile Include="Assets\Content\Features\GameBootstrapModule\Scripts\Bootstraps\SurfaceSceneBootstrap.cs" />
     <Compile Include="Assets\Content\Features\DamageablesModule\Scripts\DamageableType.cs" />
     <Compile Include="Assets\Core\AssetLoaderModule\Core\Scripts\ResourceAssetLoaderService.cs" />

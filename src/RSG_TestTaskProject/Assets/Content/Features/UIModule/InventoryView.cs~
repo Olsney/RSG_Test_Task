@@ -24,9 +24,7 @@ namespace Content.Features.UIModule
                                   $"\nMax weight: {maxWeight}";
         }
 
-        private void OnDestroy()
-        {
-            _presenter?.OnDestroy();
-        }
+        private void OnDestroy() => 
+            _presenter?.Detach();
     }
 }

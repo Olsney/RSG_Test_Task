@@ -1,28 +1,28 @@
 ﻿using System;
 using Content.Features.StorageModule.Scripts;
+using UnityEngine;
+using Zenject;
 
 namespace Content.Features.UIModule
 {
-    public class InventoryPresenter
+    public class InventoryPresenter : MonoBehaviour
     {
-        private readonly IStorage _storage;
-        private IInventoryView _view;
+        [SerializeField] private InventoryView _view;
+        
+        private IStorage _storage;
 
-        public InventoryPresenter(IStorage storage)
+        [Inject]
+        public void Construct(IStorage storage)
         {
             _storage = storage;
-        }
-
-        public void Init(IInventoryView view)
-        {
-            _view = view;
-            UpdateView();
 
             _storage.OnItemAdded += OnItemChanged;
             _storage.OnItemRemoved += OnItemChanged;
+
+            UpdateView();
         }
 
-        public void Detach()
+        public void OnDestroy()
         {
             _storage.OnItemAdded -= OnItemChanged;
             _storage.OnItemRemoved -= OnItemChanged;
