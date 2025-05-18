@@ -13,8 +13,6 @@ namespace Content.Features.UIModule
             _moneyModel = moneyModel;
             
             _moneyModel.MoneyChanged += OnMoneyChanged;
-            
-            UpdateView(_moneyModel.CurrentMoney);
         }
 
         private void OnMoneyChanged(int money) =>

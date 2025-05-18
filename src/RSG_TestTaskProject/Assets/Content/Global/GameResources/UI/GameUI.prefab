@@ -355,7 +355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <HealthView>k__BackingField: {fileID: 7379586096683176400}
   <InventoryView>k__BackingField: {fileID: 1657270476089861437}
-  <MoneyView>k__BackingField: {fileID: 0}
+  <MoneyView>k__BackingField: {fileID: 3939316708251263785}
 --- !u!1 &5492200248942864648
 GameObject:
   m_ObjectHideFlags: 0
