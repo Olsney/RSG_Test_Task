@@ -12,11 +12,11 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{8e9a974c-1943-5a06-2f5e-e710f4354b94}</ProjectGuid>
+    <ProjectGuid>{d753eefa-4381-5dc1-c8c9-6e803fe2dce2}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>PlayerData</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -25,7 +25,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>Temp\Bin\Debug\Assembly-CSharp\</OutputPath>
+    <OutputPath>Temp\Bin\Debug\PlayerData\</OutputPath>
     <DefineConstants>UNITY_6000_0_26;UNITY_6000_0;UNITY_6000;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_2022_3_OR_NEWER;UNITY_2023_1_OR_NEWER;UNITY_2023_2_OR_NEWER;UNITY_2023_3_OR_NEWER;UNITY_6000_0_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_MARSHALLING_TESTS;ENABLE_VIDEO;ENABLE_NAVIGATION_OFFMESHLINK_TO_NAVMESHLINK;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;TEXTCORE_1_0_OR_NEWER;EDITOR_ONLY_NAVMESH_BUILDER_DEPRECATED;PLATFORM_STANDALONE_WIN;PLATFORM_STANDALONE;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_NVIDIA;ENABLE_AMD;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;PLATFORM_USES_EXPLICIT_MEMORY_MANAGER_INITIALIZER;PLATFORM_SUPPORTS_WAIT_FOR_PRESENTATION;PLATFORM_SUPPORTS_SPLIT_GRAPHICS_JOBS;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;TEXTCORE_TEXT_ENGINE_1_5_OR_NEWER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -46,151 +46,12 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.26f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Core\AssetLoaderModule\Core\Scripts\ResourcesGroupHandleContainer.cs" />
-    <Compile Include="Assets\Content\Features\InteractionModule\Scripts\InteractRaycastSystem.cs" />
-    <Compile Include="Assets\Core\InputModule\Scripts\IInputListener.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\EntityBehaviours\GatherLootEntityBehaviour.cs" />
-    <Compile Include="Assets\Content\Features\CameraModule\Scripts\CinemachineCameraSetup.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\PlayerSpawner.cs" />
-    <Compile Include="Assets\Content\Global\Scripts\Generated\SceneInBuild_g.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\EntityBehaviours\MoveToSurfaceEntityBehaviour.cs" />
-    <Compile Include="Assets\Core\AssetLoaderModule\Core\Scripts\AddressableAssetLoaderService.cs" />
-    <Compile Include="Assets\Content\Features\InteractionModule\Scripts\TraderInteractable.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\EntityBehaviourFactory.cs" />
-    <Compile Include="Assets\Core\AssetLoaderModule\Core\Scripts\AssetLoaderInstaller.cs" />
-    <Compile Include="Assets\Content\Features\PrefabSpawner\Scripts\PrefabsFactory.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\EnemySpawner.cs" />
-    <Compile Include="Assets\Content\Features\InteractionModule\Scripts\TeleportToSurfaceInteractable.cs" />
-    <Compile Include="Assets\Content\Features\DamageablesModule\Scripts\IDamageable.cs" />
-    <Compile Include="Assets\Content\Features\CameraModule\Scripts\PlayerCameraRegister.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\IEntityBehaviour.cs" />
-    <Compile Include="Assets\Core\AssetLoaderModule\Core\Scripts\IAssetLoaderFacadeService.cs" />
-    <Compile Include="Assets\Content\Features\GameBootstrapModule\Scripts\Bootstraps\GlobalSceneBootstrap.cs" />
-    <Compile Include="Assets\Content\Features\InteractionModule\Scripts\IInteractable.cs" />
-    <Compile Include="Assets\Content\Features\InteractionModule\Scripts\InteractionSystemInstaller.cs" />
-    <Compile Include="Assets\Content\Features\DamageablesModule\Scripts\HealthProvider.cs" />
-    <Compile Include="Assets\Content\Features\LootModule\Scripts\LootService.cs" />
-    <Compile Include="Assets\Core\InputModule\Scripts\InputInstaller.cs" />
-    <Compile Include="Assets\Content\Features\LootModule\Scripts\LootSpawner.cs" />
-    <Compile Include="Assets\Content\Features\StorageModule\Scripts\ItemType.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\IEntity.cs" />
-    <Compile Include="Assets\Core\AssetLoaderModule\Core\Scripts\IAssetLoaderService.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\EntityBehaviours\AttackEntityBehaviour.cs" />
-    <Compile Include="Assets\Content\Features\CameraModule\Scripts\PlayerCameraModel.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\EntityAnimatorSpeedSetter.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\MonoEntity.cs" />
-    <Compile Include="Assets\Core\AssetLoaderModule\Core\Scripts\AddressablesGroupHandleContainer.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\IEntityBehaviourFactory.cs" />
-    <Compile Include="Assets\Content\Features\DamageablesModule\Scripts\MonoDamageable.cs" />
-    <Compile Include="Assets\Content\Features\InteractionModule\Scripts\Interactables\SimpleInteractable.cs" />
-    <Compile Include="Assets\Content\Features\GameBootstrapModule\Scripts\Bootstraps\BootstrapSceneBootstrap.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\IEntityDataService.cs" />
-    <Compile Include="Assets\Content\Features\InteractionModule\Scripts\LootInteractable.cs" />
-    <Compile Include="Assets\Core\InputModule\Scripts\InputListener.cs" />
-    <Compile Include="Assets\Core\StateMachineModule\Scripts\PayLoadedStateBase.cs" />
-    <Compile Include="Assets\Content\Features\InteractionModule\Scripts\TeleportToDungeonInteractable.cs" />
-    <Compile Include="Assets\Core\SceneLoaderServiceModule\Scripts\BuildInSceneLoaderService.cs" />
-    <Compile Include="Assets\Content\Features\UIModule\HealthView.cs" />
-    <Compile Include="Assets\Content\Features\UIModule\HealthPresenter.cs" />
-    <Compile Include="Assets\Content\Features\StorageModule\Scripts\ItemsConfiguration.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\EntitiesConfiguration.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\EntityType.cs" />
-    <Compile Include="Assets\Content\Features\InteractionModule\Scripts\AttackInteractable.cs" />
-    <Compile Include="Assets\Content\Features\StorageModule\Scripts\ItemFactory.cs" />
-    <Compile Include="Assets\Core\AssetLoaderModule\Core\Scripts\IAddressablesAssetLoaderService.cs" />
-    <Compile Include="Assets\Content\Features\UIModule\MoneyPresenter.cs" />
-    <Compile Include="Assets\Content\Features\UIModule\GameUIFactory.cs" />
-    <Compile Include="Assets\Content\Features\GameBootstrapModule\Scripts\Bootstraps\SurfaceSceneBootstrap.cs" />
-    <Compile Include="Assets\Content\Features\DamageablesModule\Scripts\DamageableType.cs" />
-    <Compile Include="Assets\Core\AssetLoaderModule\Core\Scripts\ResourceAssetLoaderService.cs" />
-    <Compile Include="Assets\Content\Features\UIModule\UIInstaller.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\EntityBehaviours\MoveToPointEntityBehaviour.cs" />
-    <Compile Include="Assets\Content\Features\StorageModule\Scripts\IStorage.cs" />
-    <Compile Include="Assets\Content\Features\StorageModule\Scripts\ItemConfiguration.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\PlayerEntityModel.cs" />
-    <Compile Include="Assets\Content\Features\EntityAnimatorModule\Scripts\EntityAnimator.cs" />
-    <Compile Include="Assets\Content\Features\UIModule\GameUIView.cs" />
-    <Compile Include="Assets\Content\Features\StorageModule\Scripts\StorageModel.cs" />
-    <Compile Include="Assets\Core\SceneLoaderServiceModule\Scripts\ISceneLoaderService.cs" />
-    <Compile Include="Assets\Core\SceneLoaderServiceModule\Scripts\SceneLoaderServiceFacade.cs" />
-    <Compile Include="Assets\Content\Features\PrefabSpawner\Scripts\PrefabData.cs" />
-    <Compile Include="Assets\Content\Features\StorageModule\Scripts\Item.cs" />
-    <Compile Include="Assets\Content\Features\GameBootstrapModule\Scripts\ProjectDI\ProjectContextInstaller.cs" />
-    <Compile Include="Assets\Content\Features\GameFlowStateMachineModule\Scripts\GameFlowStateBase.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\EntityBehaviours\MoveToDungeonEntityBehaviour.cs" />
-    <Compile Include="Assets\Core\StateMachineModule\Scripts\StateBase.cs" />
-    <Compile Include="Assets\Content\Features\GameFlowStateMachineModule\Scripts\GameFlowStateMachineInstaller.cs" />
-    <Compile Include="Assets\Content\Features\GameBootstrapModule\Scripts\ProjectDI\DungeonSceneContextInstaller.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\SellerSpawner.cs" />
-    <Compile Include="Assets\Content\Features\GameBootstrapModule\Scripts\ProjectDI\SurfaceSceneContextInstaller.cs" />
-    <Compile Include="Assets\Content\Features\UIModule\Presenter.cs" />
-    <Compile Include="Assets\Content\Features\GameFlowStateMachineModule\Scripts\GameFlowStateMachine.cs" />
-    <Compile Include="Assets\Core\InputModule\Scripts\Generated\InputActions.cs" />
-    <Compile Include="Assets\Content\Features\GameFlowStateMachineModule\Scripts\EnterSurfaceFlowState.cs" />
-    <Compile Include="Assets\Content\Features\CameraModule\Scripts\CameraInstaller.cs" />
-    <Compile Include="Assets\Core\AssetLoaderModule\Core\Scripts\AssetLoaderFacadeService.cs" />
-    <Compile Include="Assets\Content\Global\Scripts\Generated\PrefabNames_g.cs" />
-    <Compile Include="Assets\Core\InputModule\Scripts\Generated\DefaultInputActions.cs" />
-    <Compile Include="Assets\Content\Features\PrefabSpawner\Scripts\IPrefabsFactory.cs" />
-    <Compile Include="Assets\Core\SceneLoaderServiceModule\Scripts\SceneLoaderServiceModuleInstaller.cs" />
-    <Compile Include="Assets\Content\Features\ShopModule\Scripts\Trader.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\EntityContext.cs" />
-    <Compile Include="Assets\Content\Features\EntityAnimatorModule\Scripts\BaseAnimatorConfiguration.cs" />
-    <Compile Include="Assets\Content\Features\GameBootstrapModule\Scripts\ProjectDI\GlobalSceneContextInstaller.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Helpers\SpawnLootOnDeath.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\EntityBehaviours\SellItemsEntityBehaviour.cs" />
-    <Compile Include="Assets\Content\Features\GameBootstrapModule\Scripts\Bootstraps\DungeonSceneBootstrap.cs" />
-    <Compile Include="Assets\Content\Features\GameFlowStateMachineModule\Scripts\GlobalGameFlowState.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\EntityData.cs" />
-    <Compile Include="Assets\Content\Features\LootModule\Scripts\LootInstaller.cs" />
-    <Compile Include="Assets\Core\AssetLoaderModule\Core\Scripts\IResourceAssetLoaderService.cs" />
-    <Compile Include="Assets\Content\Features\GameBootstrapModule\Scripts\ProjectDI\BootstrapSceneContextInstaller.cs" />
-    <Compile Include="Assets\Content\Features\StorageModule\Scripts\StandardStorage.cs" />
-    <Compile Include="Assets\Content\Features\UIModule\InventoryView.cs" />
-    <Compile Include="Assets\Core\StateMachineModule\Scripts\StateMachineBehaviour.cs" />
-    <Compile Include="Assets\Content\Features\LootModule\Scripts\ILootService.cs" />
-    <Compile Include="Assets\Content\Global\Scripts\Generated\Address_g.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\AIInstaller.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Helpers\TargetsFinderService.cs" />
-    <Compile Include="Assets\Content\Features\PrefabSpawner\Scripts\PrefabSpawnerInstaller.cs" />
-    <Compile Include="Assets\Content\Features\GameFlowStateMachineModule\Scripts\EnterDungeonFlowState.cs" />
-    <Compile Include="Assets\Content\Features\UIModule\InventoryPresenter.cs" />
-    <Compile Include="Assets\Content\Features\InteractionModule\Scripts\InteractConfiguration.cs" />
-    <Compile Include="Assets\Content\Features\LootModule\Scripts\Loot.cs" />
-    <Compile Include="Assets\Core\AssetLoaderModule\Core\Scripts\AssetLoadSource.cs" />
-    <Compile Include="Assets\Content\Features\StorageModule\Scripts\IItemFactory.cs" />
-    <Compile Include="Assets\Content\Features\StorageModule\Scripts\IStorageFactory.cs" />
-    <Compile Include="Assets\Core\SceneLoaderServiceModule\Scripts\AddressablesSceneLoaderService.cs" />
-    <Compile Include="Assets\Content\Features\StorageModule\Scripts\StorageModuleInstaller.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\EntityBehaviours\IdleEntityBehaviour.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\EntityDataService.cs" />
-    <Compile Include="Assets\Content\Features\StorageModule\Scripts\StorageFactory.cs" />
-    <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\EntityBehaviours\IdleSearchForTargetsEntityBehaviour.cs" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile-2-Pass.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
-    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\Core\AssetLoaderModule\Info.json" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+    <Compile Include="Assets\Content\Features\PlayerData\Scripts\PlayerDataInstaller.cs" />
+    <Compile Include="Assets\Content\Features\PlayerData\Scripts\PlayerRegister.cs" />
+    <Compile Include="Assets\Content\Features\PlayerData\Scripts\MoneyModelOld.cs" />
+    <Compile Include="Assets\Content\Features\PlayerData\Scripts\PlayerTransformModel.cs" />
+    <Compile Include="Assets\Content\Features\PlayerData\Scripts\MoneyModel.cs" />
+    <None Include="Assets\Content\Features\PlayerData\PlayerData.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.26f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -539,8 +400,17 @@
     <Reference Include="UnityEditor.XRModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.26f1\Editor\Data\Managed\UnityEngine\UnityEditor.XRModule.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.Graphs">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.26f1\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.26f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="Zenject-usage">
       <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Assets\Plugins\Zenject\Source\Usage\Zenject-usage.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.YamlDotNet">
+      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\PackageCache\com.unity.visualscripting\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Collections.LowLevel.ILSupport">
       <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\PackageCache\com.unity.collections\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
@@ -548,8 +418,23 @@
     <Reference Include="nunit.framework">
       <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\PackageCache\com.unity.ext.nunit\net40\unity-custom\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="unityplastic">
+      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\PackageCache\com.unity.collab-proxy\Lib\Editor\unityplastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Plastic.Antlr3.Runtime">
+      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\PackageCache\com.unity.collab-proxy\Lib\Editor\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Plastic.Newtonsoft.Json">
+      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\PackageCache\com.unity.collab-proxy\Lib\Editor\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Pdb">
       <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="log4netPlastic">
+      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\PackageCache\com.unity.collab-proxy\Lib\Editor\log4netPlastic.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.IonicZip">
+      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\PackageCache\com.unity.visualscripting\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
     </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Rocks">
       <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
@@ -559,6 +444,9 @@
     </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Mdb">
       <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.TextureAssets">
+      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\PackageCache\com.unity.visualscripting\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\PackageCache\com.unity.nuget.mono-cecil\Mono.Cecil.dll</HintPath>
@@ -932,230 +820,14 @@
     <Reference Include="System.Xml.Serialization">
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.26f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Addressables.Android">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.Addressables.Android.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InputSystem.ForUI">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Addressables.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.Addressables.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Searcher.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.AI.Navigation">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Cinemachine.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.Cinemachine.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ResourceManager">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime.Shared">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.Shared.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Editor.Shared">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.Shared.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.PlasticSCM.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Multiplayer.Center.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.Multiplayer.Center.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Splines">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.Splines.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ScriptableBuildPipeline.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.GPUDriven.Runtime">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.RenderPipelines.GPUDriven.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Cinemachine">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.Cinemachine.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ScriptableBuildPipeline">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Collections">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
-    </Reference>
-    <Reference Include="PPv2URPConverters">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Addressables.Android.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.Addressables.Android.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Addressables">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.Addressables.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Rendering.LightTransport.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.Rendering.LightTransport.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Core">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Splines.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.Splines.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Collections.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.Collections.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Profiling.Core">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.Profiling.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Shared.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Core.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Multiplayer.Center.Common">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.Multiplayer.Center.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.AI.Navigation.Updater">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Flow.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.State.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.AI.Navigation.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.State">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Burst.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Burst">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualStudio.Editor">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Flow">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Rendering.LightTransport.Runtime">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.Rendering.LightTransport.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InputSystem">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.2D.Runtime">
-      <HintPath>C:\Csharp Repositories\RSG_Test_Task\src\RSG_TestTaskProject\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.2D.Runtime.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="UniTask.Linq.csproj">
-      <Project>{23155848-7845-4e3e-e559-0cbd11df9040}</Project>
-      <Name>UniTask.Linq</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniTask.csproj">
-      <Project>{56463c81-4378-6ca7-4b7f-9e3cb584b963}</Project>
-      <Name>UniTask</Name>
-    </ProjectReference>
-    <ProjectReference Include="Zenject-ReflectionBaking-Editor.csproj">
-      <Project>{c7ff4463-5c43-b556-e9cb-d60199682943}</Project>
-      <Name>Zenject-ReflectionBaking-Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Zenject-Editor.csproj">
-      <Project>{8cb2723a-d644-f28e-7f15-b5285c248957}</Project>
-      <Name>Zenject-Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniTask.Addressables.csproj">
-      <Project>{413f4166-5886-832e-cb8c-7092115305be}</Project>
-      <Name>UniTask.Addressables</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniTask.DOTween.csproj">
-      <Project>{3a50f44a-a64b-07ac-1dae-710c2c442195}</Project>
-      <Name>UniTask.DOTween</Name>
-    </ProjectReference>
-    <ProjectReference Include="PlayerData.csproj">
-      <Project>{d753eefa-4381-5dc1-c8c9-6e803fe2dce2}</Project>
-      <Name>PlayerData</Name>
-    </ProjectReference>
-    <ProjectReference Include="Zenject-PoolMonitor-Editor.csproj">
-      <Project>{741c275d-1e4c-6a18-1b36-5ecb11619465}</Project>
-      <Name>Zenject-PoolMonitor-Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniTask.TextMeshPro.csproj">
-      <Project>{7624fb56-af49-6da2-9089-297d65e32acf}</Project>
-      <Name>UniTask.TextMeshPro</Name>
-    </ProjectReference>
     <ProjectReference Include="Zenject.csproj">
       <Project>{198868f9-320c-4098-b7e0-87290beaa802}</Project>
       <Name>Zenject</Name>

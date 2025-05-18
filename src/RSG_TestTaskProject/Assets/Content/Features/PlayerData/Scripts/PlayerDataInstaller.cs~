@@ -8,6 +8,9 @@ namespace Content.Features.PlayerData.Scripts {
             
             Container.Bind<MoneyModel>()
                      .AsSingle();
+            
+            Container.Bind<MoneyProvider>()
+                     .AsSingle();
         }
     }
 }

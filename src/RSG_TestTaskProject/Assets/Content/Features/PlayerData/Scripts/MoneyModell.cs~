@@ -1,0 +1,17 @@
+﻿namespace Content.Features.PlayerData.Scripts
+{
+    public class MoneyModel
+    {
+        public int Value { get; private set; }
+        
+        public void Add(int amount)
+        {
+            Value += amount;
+        }
+        
+        public void Remove(int amount)
+        {
+            Value -= amount;
+        }
+    }
+}
