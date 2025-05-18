@@ -48,7 +48,7 @@ namespace Content.Features.AIModule.Scripts.Entity.EntityBehaviours {
         {
             int earnedMoney = _trader.SellAllItemsFromStorage(_entityContext.Storage);
             
-            _moneyModel.AddMoney(earnedMoney);
+            _moneyModel.AddMoney();
             
             StopMoving();
             OnBehaviorEnd?.Invoke();
