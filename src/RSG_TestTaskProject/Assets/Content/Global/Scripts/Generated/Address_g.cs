@@ -47,13 +47,13 @@ namespace Global.Scripts.Generated {
             public const System.String Standard_Enemy = "Standard_Enemy"; 
             public const System.String PlayerCamera = "PlayerCamera"; 
             public const System.String Seller = "Seller"; 
-            public const System.String InventoryUI = "InventoryUI"; 
+            public const System.String GameUI = "GameUI"; 
             public static List<string> AllKeys = new() {
                 "Player",
                 "Standard_Enemy",
                 "PlayerCamera",
                 "Seller",
-                "InventoryUI",
+                "GameUI",
             }; 
         } 
 

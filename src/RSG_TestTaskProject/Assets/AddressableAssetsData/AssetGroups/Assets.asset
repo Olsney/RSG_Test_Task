@@ -16,7 +16,7 @@ MonoBehaviour:
   m_GUID: fdab9cb5c9ea02b4a852e640109b281b
   m_SerializeEntries:
   - m_GUID: 2d2518dc7c6019b4e839c334a6a83fb3
-    m_Address: InventoryUI
+    m_Address: GameUI
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

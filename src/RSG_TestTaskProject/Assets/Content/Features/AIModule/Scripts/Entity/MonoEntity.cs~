@@ -33,7 +33,7 @@ namespace Content.Features.AIModule.Scripts.Entity {
             _entityContext.EntityDamageable = GetComponent<IDamageable>();
             _entityContext.EntityData = _entityDataService.GetEntityData(_entityType);
             _entityContext.EntityDamageable.SetHealth(_entityContext.EntityData.StartHealth);
-            _entityContext.Storage = _storageFactory.GetStorage();
+            _entityContext.Storage = _storage;;
             
             SetDefaultBehaviour();
         }
@@ -59,6 +59,14 @@ namespace Content.Features.AIModule.Scripts.Entity {
             _currentBehaviour.InitContext(_entityContext);
             _currentBehaviour.Start();
         }
+
+        public EntityContext Get()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public EntityContext GetContext() => 
+            _entityContext;
 
         private void OnBehaviourEnded() =>
             SetDefaultBehaviour();

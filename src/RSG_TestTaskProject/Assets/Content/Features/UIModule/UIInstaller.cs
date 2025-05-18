@@ -6,9 +6,7 @@ namespace Content.Features.UIModule
     {
         public override void InstallBindings()
         {
-            Container.BindInterfacesAndSelfTo<InventoryPresenter>().AsSingle();
-            
-            Container.BindInterfacesAndSelfTo<InventoryViewSpawner>().AsSingle();
+            Container.BindInterfacesAndSelfTo<GameUIFactory>().AsSingle();
         }
     }
 }

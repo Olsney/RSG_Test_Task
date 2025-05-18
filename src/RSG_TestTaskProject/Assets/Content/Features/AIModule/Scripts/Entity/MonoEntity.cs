@@ -1,4 +1,5 @@
-﻿using Content.Features.AIModule.Scripts.Entity.EntityBehaviours;
+﻿using System;
+using Content.Features.AIModule.Scripts.Entity.EntityBehaviours;
 using Content.Features.DamageablesModule.Scripts;
 using Content.Features.StorageModule.Scripts;
 using UnityEngine;
@@ -28,12 +29,12 @@ namespace Content.Features.AIModule.Scripts.Entity {
             _entityDataService = entityDataService;
         }
 
-        private void Start() {
+        private void Awake() {
             _entityContext.Entity = this;
             _entityContext.EntityDamageable = GetComponent<IDamageable>();
             _entityContext.EntityData = _entityDataService.GetEntityData(_entityType);
             _entityContext.EntityDamageable.SetHealth(_entityContext.EntityData.StartHealth);
-            _entityContext.Storage = _storage;;
+            _entityContext.Storage = _storage;
             
             SetDefaultBehaviour();
         }
@@ -59,6 +60,14 @@ namespace Content.Features.AIModule.Scripts.Entity {
             _currentBehaviour.InitContext(_entityContext);
             _currentBehaviour.Start();
         }
+
+        public EntityContext Get()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public EntityContext GetContext() => 
+            _entityContext;
 
         private void OnBehaviourEnded() =>
             SetDefaultBehaviour();

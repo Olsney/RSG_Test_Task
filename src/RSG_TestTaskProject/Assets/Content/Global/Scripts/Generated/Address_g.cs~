@@ -53,6 +53,7 @@ namespace Global.Scripts.Generated {
                 "Standard_Enemy",
                 "PlayerCamera",
                 "Seller",
+                "InventoryUI",
             }; 
         } 
 

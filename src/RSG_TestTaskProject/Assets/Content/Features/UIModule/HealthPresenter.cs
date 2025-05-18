@@ -1,0 +1,45 @@
+using System;
+using Content.Features.AIModule.Scripts.Entity;
+using UnityEngine;
+
+namespace Content.Features.UIModule
+{
+    internal class HealthPresenter : Presenter<HealthView>
+    {
+        private readonly PlayerEntityModel _playerModel;
+
+        public HealthPresenter(HealthView view, PlayerEntityModel playerModel) : base(view)
+        {
+            _playerModel = playerModel;
+
+            _playerModel.OnPlayerEntityChanged += HandlePlayerEntityChanged;
+        }
+
+        private void HandlePlayerEntityChanged()
+        {
+            if (_playerModel == null)
+                Debug.Log($"{_playerModel == null}");
+            
+            if(_playerModel.PlayerEntity == null)
+                Debug.Log($"{_playerModel.PlayerEntity == null}");
+            
+            if(_playerModel.PlayerEntity.GetContext() == null)
+                Debug.Log($"{_playerModel.PlayerEntity.GetContext() == null}");
+            
+            if(_playerModel.PlayerEntity.GetContext().EntityDamageable == null)
+                Debug.Log($"{_playerModel.PlayerEntity.GetContext().EntityDamageable == null}");
+            
+            _playerModel.PlayerEntity.GetContext().EntityDamageable.OnDamaged += HandleDamaged;
+        }
+
+        private void HandleDamaged() => 
+            GetCurrentHealth();
+
+        private void GetCurrentHealth()
+        {
+            Debug.Log($"{_playerModel.PlayerEntity.GetContext().EntityDamageable.GetHealth()}");
+            
+            _playerModel.PlayerEntity.GetContext().EntityDamageable.GetHealth();
+        }
+    }
+}

@@ -1,0 +1,19 @@
+﻿using Content.Features.AIModule.Scripts.Entity;
+
+namespace Content.Features.DamageablesModule.Scripts
+{
+    public class PlayerHealthModel
+    {
+        public PlayerEntityModel EntityModel;
+
+        public PlayerHealthModel(PlayerEntityModel entityModel)
+        {
+            EntityModel = entityModel;
+        }
+
+        private void GetHealth()
+        {
+            EntityModel.PlayerEntity.GetContext().EntityDamageable.Health;
+        }
+    }
+}
