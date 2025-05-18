@@ -1,5 +1,4 @@
 ﻿using System;
-using Content.Features.AIModule.Scripts;
 using Content.Features.InteractionModule;
 using UnityEngine;
 using Zenject;

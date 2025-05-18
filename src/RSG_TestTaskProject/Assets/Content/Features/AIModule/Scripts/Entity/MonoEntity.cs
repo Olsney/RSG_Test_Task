@@ -19,7 +19,6 @@ namespace Content.Features.AIModule.Scripts.Entity
 
         private IEntityDataService _entityDataService;
 
-        // private IStorageFactory _storageFactory;
         private IStorage _storage;
         private IEntityBehaviourFactory _entityBehaviourFactory;
 

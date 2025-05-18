@@ -68,6 +68,7 @@
     <Compile Include="Assets\Content\Features\GameBootstrapModule\Scripts\Bootstraps\GlobalSceneBootstrap.cs" />
     <Compile Include="Assets\Content\Features\InteractionModule\Scripts\IInteractable.cs" />
     <Compile Include="Assets\Content\Features\InteractionModule\Scripts\InteractionSystemInstaller.cs" />
+    <Compile Include="Assets\Content\Features\DamageablesModule\Scripts\HealthProvider.cs" />
     <Compile Include="Assets\Content\Features\LootModule\Scripts\LootService.cs" />
     <Compile Include="Assets\Core\InputModule\Scripts\InputInstaller.cs" />
     <Compile Include="Assets\Content\Features\LootModule\Scripts\LootSpawner.cs" />
@@ -124,7 +125,6 @@
     <Compile Include="Assets\Content\Features\UIModule\Presenter.cs" />
     <Compile Include="Assets\Content\Features\GameFlowStateMachineModule\Scripts\GameFlowStateMachine.cs" />
     <Compile Include="Assets\Core\InputModule\Scripts\Generated\InputActions.cs" />
-    <Compile Include="Assets\Content\Features\DamageablesModule\Scripts\PlayerHealthProvider.cs" />
     <Compile Include="Assets\Content\Features\GameFlowStateMachineModule\Scripts\EnterSurfaceFlowState.cs" />
     <Compile Include="Assets\Content\Features\CameraModule\Scripts\CameraInstaller.cs" />
     <Compile Include="Assets\Core\AssetLoaderModule\Core\Scripts\AssetLoaderFacadeService.cs" />

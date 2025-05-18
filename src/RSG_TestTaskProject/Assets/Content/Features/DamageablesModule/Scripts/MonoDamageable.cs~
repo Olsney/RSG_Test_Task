@@ -11,10 +11,10 @@ namespace Content.Features.DamageablesModule.Scripts {
         [SerializeField] private DamageableType _damageableType;
         [SerializeField] private AttackInteractable _attackInteractable;
         
-        private PlayerHealthProvider _healthProvider;
+        private HealthProvider _healthProvider;
 
         [Inject]
-        public void Construct(PlayerHealthProvider healthProvider)
+        public void Construct(HealthProvider healthProvider)
         {
             _healthProvider = healthProvider;
         }

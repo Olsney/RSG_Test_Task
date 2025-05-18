@@ -1,8 +1,5 @@
-using System;
 using Content.Features.DamageablesModule.Scripts;
-using Content.Features.EntityAnimatorModule.Scripts;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace Content.Features.AIModule.Scripts {
     public class TargetsFinder : MonoBehaviour {
