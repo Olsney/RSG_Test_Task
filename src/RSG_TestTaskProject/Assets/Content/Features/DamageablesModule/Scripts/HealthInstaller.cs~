@@ -1,0 +1,7 @@
+﻿namespace Content.Features.DamageablesModule.Scripts
+{
+    public class HealthInstaller
+    {
+        
+    }
+}

@@ -108,7 +108,6 @@
     <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\PlayerEntityModel.cs" />
     <Compile Include="Assets\Content\Features\EntityAnimatorModule\Scripts\EntityAnimator.cs" />
     <Compile Include="Assets\Content\Features\UIModule\GameUIView.cs" />
-    <Compile Include="Assets\Content\Features\DamageablesModule\Scripts\HealthModel.cs" />
     <Compile Include="Assets\Content\Features\StorageModule\Scripts\StorageModel.cs" />
     <Compile Include="Assets\Core\SceneLoaderServiceModule\Scripts\ISceneLoaderService.cs" />
     <Compile Include="Assets\Core\SceneLoaderServiceModule\Scripts\SceneLoaderServiceFacade.cs" />
@@ -125,6 +124,7 @@
     <Compile Include="Assets\Content\Features\UIModule\Presenter.cs" />
     <Compile Include="Assets\Content\Features\GameFlowStateMachineModule\Scripts\GameFlowStateMachine.cs" />
     <Compile Include="Assets\Core\InputModule\Scripts\Generated\InputActions.cs" />
+    <Compile Include="Assets\Content\Features\DamageablesModule\Scripts\PlayerHealthProvider.cs" />
     <Compile Include="Assets\Content\Features\GameFlowStateMachineModule\Scripts\EnterSurfaceFlowState.cs" />
     <Compile Include="Assets\Content\Features\CameraModule\Scripts\CameraInstaller.cs" />
     <Compile Include="Assets\Core\AssetLoaderModule\Core\Scripts\AssetLoaderFacadeService.cs" />
@@ -139,6 +139,7 @@
     <Compile Include="Assets\Content\Features\AIModule\Scripts\Helpers\SpawnLootOnDeath.cs" />
     <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\EntityBehaviours\SellItemsEntityBehaviour.cs" />
     <Compile Include="Assets\Content\Features\GameBootstrapModule\Scripts\Bootstraps\DungeonSceneBootstrap.cs" />
+    <Compile Include="Assets\Content\Features\DamageablesModule\Scripts\PlayerHealthModel.cs" />
     <Compile Include="Assets\Content\Features\GameFlowStateMachineModule\Scripts\GlobalGameFlowState.cs" />
     <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\EntityData.cs" />
     <Compile Include="Assets\Content\Features\LootModule\Scripts\LootInstaller.cs" />

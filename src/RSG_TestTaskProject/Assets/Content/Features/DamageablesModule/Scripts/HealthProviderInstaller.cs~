@@ -1,0 +1,14 @@
+﻿using Content.Features.AIModule.Scripts.Entity;
+using Zenject;
+
+namespace Content.Features.DamageablesModule.Scripts
+{
+    public class HealthProviderInstaller : Installer<AIInstaller>
+    {
+        public override void InstallBindings()
+        {
+            Container.Bind<PlayerHealthProvider>()
+                .AsSingle();
+        }
+    }
+}

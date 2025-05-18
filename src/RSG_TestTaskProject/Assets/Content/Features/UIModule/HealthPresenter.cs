@@ -1,45 +1,25 @@
-using System;
-using Content.Features.AIModule.Scripts.Entity;
-using UnityEngine;
+using Content.Features.DamageablesModule.Scripts;
 
 namespace Content.Features.UIModule
 {
     internal class HealthPresenter : Presenter<HealthView>
     {
-        private readonly PlayerEntityModel _playerModel;
+        private readonly HealthView _view;
+        private readonly HealthProvider _healthProvider;
 
-        public HealthPresenter(HealthView view, PlayerEntityModel playerModel) : base(view)
+        public HealthPresenter(HealthView view, HealthProvider healthProvider) : base(view)
         {
-            _playerModel = playerModel;
-
-            _playerModel.OnPlayerEntityChanged += HandlePlayerEntityChanged;
+            _view = view;
+            _healthProvider = healthProvider;
+            
+            _healthProvider.HealthChanged += OnHealthChanged;
+            UpdateView(_healthProvider.CurrentHealth);
         }
 
-        private void HandlePlayerEntityChanged()
-        {
-            if (_playerModel == null)
-                Debug.Log($"{_playerModel == null}");
-            
-            if(_playerModel.PlayerEntity == null)
-                Debug.Log($"{_playerModel.PlayerEntity == null}");
-            
-            if(_playerModel.PlayerEntity.GetContext() == null)
-                Debug.Log($"{_playerModel.PlayerEntity.GetContext() == null}");
-            
-            if(_playerModel.PlayerEntity.GetContext().EntityDamageable == null)
-                Debug.Log($"{_playerModel.PlayerEntity.GetContext().EntityDamageable == null}");
-            
-            _playerModel.PlayerEntity.GetContext().EntityDamageable.OnDamaged += HandleDamaged;
-        }
+        private void OnHealthChanged(float health) =>
+            UpdateView(health);
 
-        private void HandleDamaged() => 
-            GetCurrentHealth();
-
-        private void GetCurrentHealth()
-        {
-            Debug.Log($"{_playerModel.PlayerEntity.GetContext().EntityDamageable.GetHealth()}");
-            
-            _playerModel.PlayerEntity.GetContext().EntityDamageable.GetHealth();
-        }
+        private void UpdateView(float health) => 
+            _view.SetHealth(health);
     }
 }

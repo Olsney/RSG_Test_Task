@@ -23,6 +23,7 @@ namespace Content.Features.GameBootstrapModule.Scripts.ProjectDI {
             AIInstaller.Install(Container);
             LootInstaller.Install(Container);
             UIInstaller.Install(Container);
+            HealthProviderInstaller.Install(Container);
         }
     }
 }

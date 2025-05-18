@@ -1,36 +1,22 @@
-using System;
-using Content.Features.AIModule.Scripts.Entity;
-using UnityEngine;
+using Content.Features.DamageablesModule.Scripts;
 
 namespace Content.Features.UIModule
 {
     internal class HealthPresenter : Presenter<HealthView>
     {
-        private readonly PlayerEntityModel _playerModel;
+        private readonly HealthView _view;
+        private readonly HealthProvider _healthProvider;
 
-        public HealthPresenter(HealthView view, PlayerEntityModel playerModel) : base(view)
+        public HealthPresenter(HealthView view, HealthProvider healthProvider) : base(view)
         {
-            _playerModel = playerModel;
-
-            _playerModel.OnPlayerEntityChanged += HandlePlayerEntityChanged;
-        }
-
-        private void HandlePlayerEntityChanged()
-        {
-            if (_playerModel == null)
-                Debug.Log($"{_playerModel == null}");
+            _view = view;
+            _healthProvider = healthProvider;
             
-            _playerModel.PlayerEntity.GetContext().EntityDamageable.OnDamaged += HandleDamaged;
+            _healthProvider.HealthChanged += OnHealthChanged;
+            _healthProvider.SetHealth(_healthProvider.CurrentHealth);
         }
 
-        private void HandleDamaged() => 
-            GetCurrentHealth();
-
-        private void GetCurrentHealth()
-        {
-            Debug.Log($"{_playerModel.PlayerEntity.GetContext().EntityDamageable.GetHealth()}");
-            
-            _playerModel.PlayerEntity.GetContext().EntityDamageable.GetHealth();
-        }
+        private void OnHealthChanged(float health) =>
+            _view.SetHealth(health);
     }
 }

@@ -2,13 +2,22 @@
 using Content.Features.AIModule.Scripts;
 using Content.Features.InteractionModule;
 using UnityEngine;
+using Zenject;
 
 namespace Content.Features.DamageablesModule.Scripts {
     public class MonoDamageable : MonoBehaviour, IDamageable
     {
-        [SerializeField] public float _health = 100f;
+        [SerializeField] public float _health;
         [SerializeField] private DamageableType _damageableType;
         [SerializeField] private AttackInteractable _attackInteractable;
+        
+        private HealthProvider _healthProvider;
+
+        [Inject]
+        public void Construct(HealthProvider healthProvider)
+        {
+            _healthProvider = healthProvider;
+        }
 
         public Vector3 Position =>
             transform.position;
@@ -27,6 +36,10 @@ namespace Content.Features.DamageablesModule.Scripts {
 
         public void Damage(float damage) {
             _health -= damage;
+
+            if (_healthProvider != null) 
+                _healthProvider.SetHealth(_health);
+            
             OnDamaged?.Invoke();
 
             if (_health > 0)

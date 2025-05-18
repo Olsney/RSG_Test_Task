@@ -1,4 +1,5 @@
-﻿using Content.Features.StorageModule.Scripts;
+﻿using Content.Features.AIModule.Scripts.Entity;
+using Content.Features.StorageModule.Scripts;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using Zenject;
@@ -11,11 +12,13 @@ namespace Content.Features.UIModule
         
         private readonly DiContainer _container;
         private readonly IStorage _storage;
+        private readonly PlayerEntityModel _playerEntityModel;
 
-        public GameUIFactory(DiContainer container, IStorage storage)
+        public GameUIFactory(DiContainer container, IStorage storage, PlayerEntityModel playerEntityModel)
         {
             _container = container;
             _storage = storage;
+            _playerEntityModel = playerEntityModel;
         }
 
         public void Initialize()
@@ -37,7 +40,7 @@ namespace Content.Features.UIModule
         }
 
         private HealthPresenter CreateHealthPresenter(GameUIView gameUIView) => 
-            new(gameUIView.HealthView);
+            new(gameUIView.HealthView, _playerEntityModel);
 
         private InventoryPresenter CreateInventoryPresenter(GameUIView gameUIView) =>
             new(gameUIView.InventoryView, _storage);
