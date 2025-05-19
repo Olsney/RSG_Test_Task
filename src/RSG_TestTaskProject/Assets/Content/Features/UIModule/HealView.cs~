@@ -1,0 +1,27 @@
+﻿using System;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
+
+namespace Content.Features.UIModule
+{
+    public class HealView : MonoBehaviour
+    {
+        [SerializeField] private Button _healButton;
+        [SerializeField] private TextMeshProUGUI _countText;
+
+        public event Action HealClicked;
+        
+        private void Awake()
+        {
+            _healButton.onClick.AddListener(() => HealClicked?.Invoke());
+        }
+
+        public void SetCount(int count)
+        {
+            _countText.text = $"Potions: {count}";
+            _healButton.interactable = count > 0;
+        }
+    }
+}

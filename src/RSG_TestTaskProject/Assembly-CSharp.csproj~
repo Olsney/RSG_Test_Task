@@ -51,6 +51,7 @@
     <Compile Include="Assets\Core\InputModule\Scripts\IInputListener.cs" />
     <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\EntityBehaviours\GatherLootEntityBehaviour.cs" />
     <Compile Include="Assets\Content\Features\CameraModule\Scripts\CinemachineCameraSetup.cs" />
+    <Compile Include="Assets\Content\Features\UIModule\MoneyView.cs" />
     <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\PlayerSpawner.cs" />
     <Compile Include="Assets\Content\Global\Scripts\Generated\SceneInBuild_g.cs" />
     <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\EntityBehaviours\MoveToSurfaceEntityBehaviour.cs" />
