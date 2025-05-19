@@ -1,6 +1,7 @@
 ﻿using Content.Features.DamageablesModule.Scripts;
 using Content.Features.StorageModule.Scripts;
 using System.Linq;
+using UnityEngine;
 
 namespace Content.Features.UIModule
 {
@@ -23,8 +24,12 @@ namespace Content.Features.UIModule
             UpdateView();
         }
 
-        private void OnHealClicked() => 
+        private void OnHealClicked()
+        {
+            Debug.Log("OnHealClicked");
+            
             UsePotion();
+        }
 
         private void UsePotion()
         {
@@ -36,13 +41,13 @@ namespace Content.Features.UIModule
             if (GetHealResult(potion) > _healthProvider.MaxHealth)
             {
                 _healthProvider.SetHealth(_healthProvider.MaxHealth);
+                _storage.RemoveItem(potion);
 
                 return;
             }
 
 
             _healthProvider.SetHealth(GetHealResult(potion));
-
             _storage.RemoveItem(potion);
         }
 

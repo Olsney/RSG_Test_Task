@@ -19,6 +19,8 @@ namespace Content.Features.UIModule
             _healView.HealClicked += OnHealClicked;
             _storage.OnItemAdded += OnItemsChanged;
             _storage.OnItemRemoved += OnItemsChanged;
+
+            UpdateView();
         }
 
         private void OnHealClicked() => 
@@ -34,13 +36,13 @@ namespace Content.Features.UIModule
             if (GetHealResult(potion) > _healthProvider.MaxHealth)
             {
                 _healthProvider.SetHealth(_healthProvider.MaxHealth);
+                _storage.RemoveItem(potion);
 
                 return;
             }
 
 
             _healthProvider.SetHealth(GetHealResult(potion));
-
             _storage.RemoveItem(potion);
         }
 
