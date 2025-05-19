@@ -52,14 +52,12 @@ namespace Content.Features.UIModule
 
         private void UpdateView()
         {
-            int count = 0;
-
-            count = CalculateHealCount(count);
+            int count = CalculateHealCount();
 
             _healView.SetHealPotionsInfo(count);
         }
 
-        private int CalculateHealCount(int count)
+        private int CalculateHealCount()
         {
             int count = 0;
 

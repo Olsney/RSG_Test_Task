@@ -19,6 +19,8 @@ namespace Content.Features.UIModule
             _healView.HealClicked += OnHealClicked;
             _storage.OnItemAdded += OnItemsChanged;
             _storage.OnItemRemoved += OnItemsChanged;
+
+            UpdateView();
         }
 
         private void OnHealClicked() => 
