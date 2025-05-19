@@ -2,6 +2,7 @@
 using Content.Features.DamageablesModule.Scripts;
 using Content.Features.PlayerData.Scripts;
 using Content.Features.StorageModule.Scripts;
+using Core.InputModule;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using Zenject;
@@ -16,14 +17,16 @@ namespace Content.Features.UIModule
         private readonly IStorage _storage;
         private readonly HealthProvider _healthProvider;
         private readonly MoneyModel _moneyModel;
+        private readonly IInputListener _inputListener;
         private readonly PlayerEntityModel _playerEntityModel;
 
-        public GameUIFactory(DiContainer container, IStorage storage, HealthProvider healthProvider, MoneyModel moneyModel)
+        public GameUIFactory(DiContainer container, IStorage storage, HealthProvider healthProvider, MoneyModel moneyModel, IInputListener inputListener)
         {
             _container = container;
             _storage = storage;
             _healthProvider = healthProvider;
             _moneyModel = moneyModel;
+            _inputListener = inputListener;
         }
 
         public void Initialize()
@@ -57,6 +60,6 @@ namespace Content.Features.UIModule
             new(gameUIView.MoneyView, _moneyModel);
         
         private HealPresenter CreateHealPresenter(GameUIView gameUIView) =>
-            new(gameUIView.HealView, _storage, _healthProvider);
+            new(gameUIView.HealView, _storage, _healthProvider, _inputListener);
     }
 }

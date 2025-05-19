@@ -37,6 +37,15 @@ namespace Core.InputModule.Generated
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Heal"",
+                    ""type"": ""Button"",
+                    ""id"": ""8c66c468-abaf-453e-ba0b-458e2850ddab"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -48,6 +57,17 @@ namespace Core.InputModule.Generated
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Interaction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""61c4ddf0-706a-414c-b908-462954f2e8ef"",
+                    ""path"": ""<Keyboard>/h"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Heal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -636,6 +656,7 @@ namespace Core.InputModule.Generated
             // Player
             m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
             m_Player_Interaction = m_Player.FindAction("Interaction", throwIfNotFound: true);
+            m_Player_Heal = m_Player.FindAction("Heal", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -716,11 +737,13 @@ namespace Core.InputModule.Generated
         private readonly InputActionMap m_Player;
         private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
         private readonly InputAction m_Player_Interaction;
+        private readonly InputAction m_Player_Heal;
         public struct PlayerActions
         {
             private @DefaultInputActions m_Wrapper;
             public PlayerActions(@DefaultInputActions wrapper) { m_Wrapper = wrapper; }
             public InputAction @Interaction => m_Wrapper.m_Player_Interaction;
+            public InputAction @Heal => m_Wrapper.m_Player_Heal;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -733,6 +756,9 @@ namespace Core.InputModule.Generated
                 @Interaction.started += instance.OnInteraction;
                 @Interaction.performed += instance.OnInteraction;
                 @Interaction.canceled += instance.OnInteraction;
+                @Heal.started += instance.OnHeal;
+                @Heal.performed += instance.OnHeal;
+                @Heal.canceled += instance.OnHeal;
             }
 
             private void UnregisterCallbacks(IPlayerActions instance)
@@ -740,6 +766,9 @@ namespace Core.InputModule.Generated
                 @Interaction.started -= instance.OnInteraction;
                 @Interaction.performed -= instance.OnInteraction;
                 @Interaction.canceled -= instance.OnInteraction;
+                @Heal.started -= instance.OnHeal;
+                @Heal.performed -= instance.OnHeal;
+                @Heal.canceled -= instance.OnHeal;
             }
 
             public void RemoveCallbacks(IPlayerActions instance)
@@ -923,6 +952,7 @@ namespace Core.InputModule.Generated
         public interface IPlayerActions
         {
             void OnInteraction(InputAction.CallbackContext context);
+            void OnHeal(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {

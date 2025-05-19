@@ -34,8 +34,6 @@ namespace Core.InputModule {
             _interactionAction.performed -= OnInteraction;
             _interactionAction.started -= OnInteraction;
             _interactionAction.canceled -= OnInteraction;
-            _healPressedAction.performed -= OnHealPerformed;
-
         }
 
         public void OnInteraction(InputAction.CallbackContext context) {

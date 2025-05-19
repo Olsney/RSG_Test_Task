@@ -1,6 +1,7 @@
 ﻿using Content.Features.DamageablesModule.Scripts;
 using Content.Features.StorageModule.Scripts;
 using System.Linq;
+using Core.InputModule;
 using UnityEngine;
 
 namespace Content.Features.UIModule
@@ -10,26 +11,26 @@ namespace Content.Features.UIModule
         private readonly HealView _healView;
         private readonly IStorage _storage;
         private readonly HealthProvider _healthProvider;
+        private readonly IInputListener _inputListener;
 
-        public HealPresenter(HealView healView, IStorage storage, HealthProvider healthProvider)
+        public HealPresenter(HealView healView, IStorage storage, HealthProvider healthProvider,
+            IInputListener inputListener)
         {
             _healView = healView;
             _storage = storage;
             _healthProvider = healthProvider;
+            _inputListener = inputListener;
 
-            _healView.HealClicked += OnHealClicked;
+            _healView.HealClicked += OnHealUsed;
+            _inputListener.HealPressed += OnHealUsed;
             _storage.OnItemAdded += OnItemsChanged;
             _storage.OnItemRemoved += OnItemsChanged;
 
             UpdateView();
         }
 
-        private void OnHealClicked()
-        {
-            Debug.Log("OnHealClicked");
-            
+        private void OnHealUsed() => 
             UsePotion();
-        }
 
         private void UsePotion()
         {
