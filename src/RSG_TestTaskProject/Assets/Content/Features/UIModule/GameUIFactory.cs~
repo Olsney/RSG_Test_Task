@@ -42,8 +42,8 @@ namespace Content.Features.UIModule
             HealthPresenter healthPresenter = CreateHealthPresenter(gameUIView);
             InventoryPresenter inventoryView = CreateInventoryPresenter(gameUIView);
             MoneyPresenter moneyPresenter = CreateMoneyPresenter(gameUIView);
-            HealPresenter healPresenter = CreateHealPresenter(gameUIView);
-
+            CreateHealPresenter(gameUIView)
+            
             Object.DontDestroyOnLoad(instance);
         }
 

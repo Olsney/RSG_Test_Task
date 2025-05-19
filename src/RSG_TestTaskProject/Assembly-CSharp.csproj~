@@ -131,6 +131,7 @@
     <Compile Include="Assets\Content\Features\CameraModule\Scripts\CameraInstaller.cs" />
     <Compile Include="Assets\Core\AssetLoaderModule\Core\Scripts\AssetLoaderFacadeService.cs" />
     <Compile Include="Assets\Content\Global\Scripts\Generated\PrefabNames_g.cs" />
+    <Compile Include="Assets\Content\Features\UIModule\HealView.cs" />
     <Compile Include="Assets\Core\InputModule\Scripts\Generated\DefaultInputActions.cs" />
     <Compile Include="Assets\Content\Features\PrefabSpawner\Scripts\IPrefabsFactory.cs" />
     <Compile Include="Assets\Core\SceneLoaderServiceModule\Scripts\SceneLoaderServiceModuleInstaller.cs" />

@@ -18,7 +18,7 @@ namespace Content.Features.UIModule
             _healButton.onClick.AddListener(() => HealClicked?.Invoke());
         }
 
-        public void SetCount(int count)
+        public void SetHealPotionsInfo(int count)
         {
             _countText.text = $"Potions: {count}";
             _healButton.interactable = IsHealToUseExist(count);

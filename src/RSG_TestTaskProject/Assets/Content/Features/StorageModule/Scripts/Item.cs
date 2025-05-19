@@ -8,6 +8,7 @@ namespace Content.Features.StorageModule.Scripts {
         public int Price { get; private set; }
         public float Weight { get; private set; }
         public ItemType ItemType { get; private set; }
+        public float HealValue { get; private set; }
 
         public Item(string name, Sprite icon, int price, float weight) {
             Name = name;
@@ -22,6 +23,7 @@ namespace Content.Features.StorageModule.Scripts {
             Icon = itemConfiguration.Icon;
             Price = itemConfiguration.Price;
             ItemType = itemConfiguration.ItemType;
+            HealValue = itemConfiguration.HealValue;
         }
     }
 }
