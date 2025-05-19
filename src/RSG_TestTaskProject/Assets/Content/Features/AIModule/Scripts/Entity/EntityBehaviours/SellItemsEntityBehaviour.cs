@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Content.Features.PlayerData.Scripts;
 using Content.Features.ShopModule.Scripts;
+using Content.Features.StorageModule.Scripts;
 using UnityEngine;
 using Zenject;
 
@@ -46,7 +49,12 @@ namespace Content.Features.AIModule.Scripts.Entity.EntityBehaviours {
 
         private void SellItems()
         {
-            int earnedMoney = _trader.SellAllItemsFromStorage(_entityContext.Storage);
+            List<Item> itemsToSell = _entityContext.Storage
+                .GetAllItems()
+                .Where(item => item.ItemType == ItemType.Book)
+                .ToList();
+            
+            int earnedMoney = _trader.SellItemsFromStorage(itemsToSell, _entityContext.Storage);
             
             _moneyModel.AddMoney(earnedMoney);
             
