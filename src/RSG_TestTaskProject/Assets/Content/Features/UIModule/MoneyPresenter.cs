@@ -1,26 +1,30 @@
-﻿using Content.Features.PlayerData.Scripts;
+﻿using System;
+using Content.Features.PlayerData.Scripts;
+using Zenject;
 
 namespace Content.Features.UIModule
 {
-    public class MoneyPresenter
-    {
-        private readonly MoneyView _moneyView;
+    public class MoneyPresenter :  Presenter<MoneyView> {
         private readonly MoneyModel _moneyModel;
 
-        public MoneyPresenter(MoneyView moneyView, MoneyModel moneyModel)
-        {
-            _moneyView = moneyView;
+        public MoneyPresenter(MoneyView moneyView, MoneyModel moneyModel) : base(moneyView) {
             _moneyModel = moneyModel;
+        }
+
+        public override void Initialize() {
+            UpdateView(_moneyModel.CurrentMoney);
             
             _moneyModel.MoneyChanged += OnMoneyChanged;
-            
-            UpdateView(_moneyModel.CurrentMoney);
+        }
+
+        public override void Dispose() {
+            _moneyModel.MoneyChanged -= OnMoneyChanged;
         }
 
         private void OnMoneyChanged(int money) =>
             UpdateView(money);
 
         private void UpdateView(float money) => 
-            _moneyView.SetMoney(money);
+            View.SetMoney(money);
     }
 }

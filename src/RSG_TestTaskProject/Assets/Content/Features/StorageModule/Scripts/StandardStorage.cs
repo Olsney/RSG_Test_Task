@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
 
 namespace Content.Features.StorageModule.Scripts
 {
@@ -10,8 +8,7 @@ namespace Content.Features.StorageModule.Scripts
         private List<Item> _items = new List<Item>();
         private readonly StorageModel _model;
 
-        public StandardStorage(StorageModel model)
-        {
+        public StandardStorage(StorageModel model) {
             _model = model;
         }
         
@@ -24,8 +21,7 @@ namespace Content.Features.StorageModule.Scripts
         public List<Item> GetAllItems() => 
             _model.GetAllItems();
 
-        public bool TryAddItem(Item item)
-        {
+        public bool TryAddItem(Item item) {
             if (IsAlreadyContained(item))
                 return false;
 
@@ -37,26 +33,22 @@ namespace Content.Features.StorageModule.Scripts
             return true;
         }
 
-        public void AddItems(List<Item> items)
-        {
+        public void AddItems(List<Item> items) {
             foreach (var item in items)
                 TryAddItem(item);
         }
 
-        public void RemoveItem(Item item)
-        {
+        public void RemoveItem(Item item) {
             if (_model.Remove(item))
                 OnItemRemoved?.Invoke(item);
         }
 
-        public void RemoveItems(List<Item> items)
-        {
+        public void RemoveItems(List<Item> items) {
             foreach (var item in items)
                 RemoveItem(item);
         }
 
-        public void RemoveAllItems()
-        {
+        public void RemoveAllItems() {
             foreach (var item in _model.GetAllItems())
                 RemoveItem(item);
         }

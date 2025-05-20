@@ -3,8 +3,7 @@ using System.Collections.Generic;
 
 namespace Content.Features.StorageModule.Scripts
 {
-    public interface IStorage
-    {
+    public interface IStorage {
         public event Action<Item> OnItemAdded;
         public event Action<Item> OnItemRemoved;
         float CurrentWeight { get; }

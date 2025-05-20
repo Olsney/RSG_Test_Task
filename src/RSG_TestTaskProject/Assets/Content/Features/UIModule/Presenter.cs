@@ -1,12 +1,18 @@
-﻿namespace Content.Features.UIModule
+﻿using System;
+using Zenject;
+
+namespace Content.Features.UIModule
 {
-    public class Presenter<T>
+    public abstract class Presenter<T> : IInitializable, IDisposable
     {
-        public Presenter(T view)
-        {
+        protected Presenter(T view) {
             View = view;
         }
 
         protected T View { get; }
+        
+        public abstract void Initialize();
+
+        public abstract void Dispose();
     }
 }

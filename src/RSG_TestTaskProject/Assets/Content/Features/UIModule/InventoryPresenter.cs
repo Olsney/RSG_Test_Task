@@ -1,23 +1,25 @@
-﻿using Content.Features.StorageModule.Scripts;
+﻿using System;
+using Content.Features.StorageModule.Scripts;
+using Zenject;
 
 namespace Content.Features.UIModule
 {
-    public class InventoryPresenter : Presenter<InventoryView>
-    {
+    public class InventoryPresenter : Presenter<InventoryView> {
         private IStorage _storage;
 
         public InventoryPresenter(InventoryView view, IStorage storage) : base(view)
         {
             _storage = storage;
+        }
+
+        public override void Initialize() {
+            UpdateView();
             
             _storage.OnItemAdded += OnItemChanged;
             _storage.OnItemRemoved += OnItemChanged;
-
-            UpdateView();
         }
 
-        public void Dispose()
-        {
+        public override void Dispose() {
             _storage.OnItemAdded -= OnItemChanged;
             _storage.OnItemRemoved -= OnItemChanged;
         }
@@ -25,8 +27,7 @@ namespace Content.Features.UIModule
         private void OnItemChanged(Item _) =>
             UpdateView();
 
-        private void UpdateView()
-        {
+        private void UpdateView() {
             View.SetItemInfo(itemsCount: _storage.GetAllItems().Count,
                 currentWeight: _storage.CurrentWeight,
                 maxWeight: _storage.MaxWeight);

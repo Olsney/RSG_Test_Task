@@ -1,27 +1,28 @@
-﻿using Content.Features.DamageablesModule.Scripts;
+﻿using System;
+using Content.Features.DamageablesModule.Scripts;
 using Content.Features.StorageModule.Scripts;
 using System.Linq;
 using Core.InputModule;
-using UnityEngine;
+using Zenject;
 
 namespace Content.Features.UIModule
 {
-    public class HealPresenter
-    {
-        private readonly HealView _healView;
+    public class HealPresenter : Presenter<HealView> {
         private readonly IStorage _storage;
         private readonly HealthProvider _healthProvider;
         private readonly IInputListener _inputListener;
 
         public HealPresenter(HealView healView, IStorage storage, HealthProvider healthProvider,
-            IInputListener inputListener)
-        {
-            _healView = healView;
+            IInputListener inputListener) : base(healView) {
             _storage = storage;
             _healthProvider = healthProvider;
             _inputListener = inputListener;
 
-            _healView.HealClicked += OnHealUsed;
+
+        }
+
+        public override void Initialize() {
+            View.HealClicked += OnHealUsed;
             _inputListener.HealPressed += OnHealUsed;
             _storage.OnItemAdded += OnItemsChanged;
             _storage.OnItemRemoved += OnItemsChanged;
@@ -29,11 +30,17 @@ namespace Content.Features.UIModule
             UpdateView();
         }
 
+        public override void Dispose() {
+            View.HealClicked -= OnHealUsed;
+            _inputListener.HealPressed -= OnHealUsed;
+            _storage.OnItemAdded -= OnItemsChanged;
+            _storage.OnItemRemoved -= OnItemsChanged;
+        }
+
         private void OnHealUsed() => 
             UsePotion();
 
-        private void UsePotion()
-        {
+        private void UsePotion() {
             Item potion = _storage.GetAllItems().FirstOrDefault(i => i.ItemType == ItemType.Potion);
 
             if (potion == null || potion.HealValue <= 0)
@@ -58,15 +65,13 @@ namespace Content.Features.UIModule
         private void OnItemsChanged(Item _) =>
             UpdateView();
 
-        private void UpdateView()
-        {
+        private void UpdateView() {
             int count = CalculateHealCount();
 
-            _healView.SetHealPotionsInfo(count);
+            View.SetHealPotionsInfo(count);
         }
 
-        private int CalculateHealCount()
-        {
+        private int CalculateHealCount() {
             int count = 0;
 
             

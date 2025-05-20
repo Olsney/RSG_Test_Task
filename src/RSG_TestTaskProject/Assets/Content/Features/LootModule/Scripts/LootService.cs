@@ -3,15 +3,13 @@ using UnityEngine;
 
 namespace Content.Features.LootModule.Scripts
 {
-    public class LootService : ILootService
-    {
+    public class LootService : ILootService {
         private IItemFactory _itemFactory;
 
         public LootService(IItemFactory itemFactory) =>
             _itemFactory = itemFactory;
 
-        public int CollectLoot(Loot loot, IStorage storage)
-        {
+        public int CollectLoot(Loot loot, IStorage storage) {
             int collectedCount = 0;
 
             foreach (ItemType itemType in loot.GetItemsInLoot())

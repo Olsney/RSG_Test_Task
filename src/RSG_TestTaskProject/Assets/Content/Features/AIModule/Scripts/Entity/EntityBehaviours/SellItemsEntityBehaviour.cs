@@ -16,8 +16,7 @@ namespace Content.Features.AIModule.Scripts.Entity.EntityBehaviours {
         public event Action OnBehaviorEnd;
 
         [Inject]
-        public void InjectDependencies(MoneyModel moneyModel)
-        {
+        public void InjectDependencies(MoneyModel moneyModel) {
             _moneyModel = moneyModel;
         }
         public void InitContext(EntityContext entityContext) =>
@@ -47,8 +46,7 @@ namespace Content.Features.AIModule.Scripts.Entity.EntityBehaviours {
         private bool IsNearTheTarget() =>
             Vector3.Distance(_entityContext.EntityDamageable.Position, _trader.transform.position) <= _entityContext.EntityData.InteractDistance;
 
-        private void SellItems()
-        {
+        private void SellItems() {
             List<Item> itemsToSell = _entityContext.Storage
                 .GetAllItems()
                 .Where(item => item.ItemType == ItemType.Book)

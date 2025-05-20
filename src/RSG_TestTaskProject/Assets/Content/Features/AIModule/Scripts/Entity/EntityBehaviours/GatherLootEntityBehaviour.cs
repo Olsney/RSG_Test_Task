@@ -4,8 +4,7 @@ using UnityEngine;
 
 namespace Content.Features.AIModule.Scripts.Entity.EntityBehaviours
 {
-    public class GatherLootEntityBehaviour : IEntityBehaviour
-    {
+    public class GatherLootEntityBehaviour : IEntityBehaviour {
         private EntityContext _entityContext;
         private Loot _loot;
         private ILootService _lootService;
@@ -21,13 +20,11 @@ namespace Content.Features.AIModule.Scripts.Entity.EntityBehaviours
         public void SetLoot(Loot loot) =>
             _loot = loot;
 
-        public void Start()
-        {
+        public void Start() {
             _entityContext.NavMeshAgent.speed = _entityContext.EntityData.Speed;
         }
 
-        public void Process()
-        {
+        public void Process() {
             if (IsNearTheTarget())
                 CollectLoot();
             else
@@ -48,8 +45,7 @@ namespace Content.Features.AIModule.Scripts.Entity.EntityBehaviours
             Vector3.Distance(_entityContext.EntityDamageable.Position, _loot.transform.position) <=
             _entityContext.EntityData.InteractDistance;
 
-        private void CollectLoot()
-        {
+        private void CollectLoot() {
             int collectedLootCount = _lootService.CollectLoot(_loot, _entityContext.Storage);
 
             if (IsCollectedLootExist(collectedLootCount))

@@ -3,8 +3,7 @@ using System.Linq;
 
 namespace Content.Features.StorageModule.Scripts
 {
-    public class StorageModel
-    {
+    public class StorageModel { 
         private const float MAX_WEIGHT = 30f;
         
         private readonly List<Item> _items = new List<Item>();
@@ -12,8 +11,7 @@ namespace Content.Features.StorageModule.Scripts
 
         private float _currentWeight;
 
-        public StorageModel()
-        {
+        public StorageModel() {
             _maxWeight = MAX_WEIGHT;
             _currentWeight = 0f;
         }
@@ -21,15 +19,13 @@ namespace Content.Features.StorageModule.Scripts
         public float CurrentWeight => _currentWeight;
         public float MaxWeight => _maxWeight;
 
-        public void Add(Item item)
-        {
+        public void Add(Item item) {
             _items.Add(item);
             
             _currentWeight += item.Weight;
         }
 
-        public bool Remove(Item item)
-        {
+        public bool Remove(Item item) {
             if (_items.Remove(item) == false)
                 return false;
             
@@ -41,8 +37,7 @@ namespace Content.Features.StorageModule.Scripts
         public List<Item> GetAllItems() =>
             _items.ToList();
 
-        private void RemoveItemWeight(Item item)
-        {
+        private void RemoveItemWeight(Item item) {
             if (_currentWeight - item.Weight < 0)
             {
                 _currentWeight = 0;

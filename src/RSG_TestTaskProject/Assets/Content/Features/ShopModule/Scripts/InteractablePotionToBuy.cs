@@ -7,42 +7,39 @@ using Zenject;
 
 namespace Content.Features.ShopModule.Scripts
 {
-    public class InteractablePotionToBuy : MonoBehaviour, IInteractable
-    {
-        private const int Price = 20;
-        private const ItemType ItemToBuy = ItemType.Potion;
+    public class InteractablePotionToBuy : MonoBehaviour, IInteractable {
+        private const int PRICE = 20;
+        private const ItemType ITEM_TO_BUY = ItemType.Potion;
 
         private MoneyModel _moneyModel;
         private IItemFactory _itemFactory;
         private IStorage _playerStorage;
 
         [Inject]
-        public void Construct(
+        public void InjectDependencies(
             MoneyModel moneyModel,
-            IItemFactory itemFactory)
-        {
+            IItemFactory itemFactory) {
             _moneyModel = moneyModel;
             _itemFactory = itemFactory;
         }
 
-        public void Interact(IEntity entity)
-        {
+        public void Interact(IEntity entity) {
             IStorage storage = entity.GetContext().Storage;
 
             if (!CanPay())
                 return;
 
-            Item item = _itemFactory.GetItem(ItemToBuy);
+            Item item = _itemFactory.GetItem(ITEM_TO_BUY);
 
             if (storage.TryAddItem(item) == false)
                 return;
 
 
-            _moneyModel.Pay(Price);
+            _moneyModel.Pay(PRICE);
             Destroy(gameObject);
         }
 
         private bool CanPay() => 
-            _moneyModel.CurrentMoney >= Price;
+            _moneyModel.CurrentMoney >= PRICE;
     }
 }

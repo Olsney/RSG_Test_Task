@@ -4,8 +4,7 @@ using UnityEngine;
 
 namespace Content.Features.UIModule
 {
-    public class InventoryView : MonoBehaviour
-    {
+    public class InventoryView : MonoBehaviour {
         private const float ANIMATION_DURATION = 0.5f;
 
         [SerializeField] private TextMeshProUGUI _itemCountText;
@@ -18,8 +17,7 @@ namespace Content.Features.UIModule
         private int _lastItemCount;
         private float _lastWeight;
 
-        public void SetItemInfo(int itemsCount, float currentWeight, float maxWeight)
-        {
+        public void SetItemInfo(int itemsCount, float currentWeight, float maxWeight) {
             _itemTween?.Kill();
             _itemTween = DOVirtual
                 .Int(_lastItemCount, itemsCount, ANIMATION_DURATION, value =>

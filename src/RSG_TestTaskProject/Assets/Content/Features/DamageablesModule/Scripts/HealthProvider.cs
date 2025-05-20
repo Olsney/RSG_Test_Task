@@ -2,8 +2,7 @@
 
 namespace Content.Features.DamageablesModule.Scripts
 {
-    public class HealthProvider
-    {
+    public class HealthProvider {
         private bool _isInitialized;
         public float CurrentHealth { get; private set; }
         public float MaxHealth { get; private set; }

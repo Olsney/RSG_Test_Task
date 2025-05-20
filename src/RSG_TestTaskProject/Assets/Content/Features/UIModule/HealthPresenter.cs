@@ -1,19 +1,27 @@
+using System;
 using Content.Features.DamageablesModule.Scripts;
+using Zenject;
 
 namespace Content.Features.UIModule
 {
-    internal class HealthPresenter : Presenter<HealthView>
-    {
+    public class HealthPresenter : Presenter<HealthView> {
         private readonly HealthView _view;
         private readonly HealthProvider _healthProvider;
 
-        public HealthPresenter(HealthView view, HealthProvider healthProvider) : base(view)
-        {
+        public HealthPresenter(HealthView view, HealthProvider healthProvider) : base(view) {
             _view = view;
             _healthProvider = healthProvider;
             
-            _healthProvider.HealthChanged += OnHealthChanged;
+        }
+
+        public override void Initialize() {
             UpdateView(_healthProvider.CurrentHealth, _healthProvider.MaxHealth);
+
+            _healthProvider.HealthChanged += OnHealthChanged;
+        }
+
+        public override void Dispose() {
+            _healthProvider.HealthChanged -= OnHealthChanged;
         }
 
         private void OnHealthChanged(float health) =>

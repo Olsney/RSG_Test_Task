@@ -8,8 +8,7 @@ using UnityEngine.UI;
 
 namespace Content.Features.UIModule
 {
-    public class HealView : MonoBehaviour
-    {
+    public class HealView : MonoBehaviour {
         private const float ANIMATION_DURATION = 0.5f;
         
         [SerializeField] private Button _healButton;
@@ -19,18 +18,15 @@ namespace Content.Features.UIModule
         
         private Tween _countTween;
         
-        private void OnEnable()
-        {
+        private void OnEnable() {
             _healButton.onClick.AddListener(HealClicked);
         }
 
-        private void OnDisable()
-        {
+        private void OnDisable() {
             _healButton.onClick.RemoveListener(HealClicked);
         }
 
-        public void SetHealPotionsInfo(int count)
-        {
+        public void SetHealPotionsInfo(int count) {
             _countTween?.Kill();
             _countTween = DOVirtual.Int(
                 int.Parse(_countText.text),

@@ -7,8 +7,7 @@ using Zenject;
 
 namespace Content.Features.AIModule.Scripts.Entity
 {
-    public class MonoEntity : MonoBehaviour, IEntity
-    {
+    public class MonoEntity : MonoBehaviour, IEntity {
         [SerializeField] private EntityContext _entityContext;
         [SerializeField] private EntityType _entityType;
         [SerializeField] private bool _isAggressive;
@@ -28,16 +27,14 @@ namespace Content.Features.AIModule.Scripts.Entity
             IStorage storage,
             IEntityBehaviourFactory entityBehaviourFactory,
             HealthProvider healthProvider
-        )
-        {
+        ) {
             _entityBehaviourFactory = entityBehaviourFactory;
             _storage = storage;
             _entityDataService = entityDataService;
             _healthProvider = healthProvider;
         }
 
-        private void Awake()
-        {
+        private void Awake() {
             _entityContext.Entity = this;
             _entityContext.EntityDamageable = GetComponent<IDamageable>();
             _entityContext.EntityData = _entityDataService.GetEntityData(_entityType);
@@ -62,8 +59,7 @@ namespace Content.Features.AIModule.Scripts.Entity
         private void Update() =>
             _currentBehaviour.Process();
 
-        private void OnDestroy()
-        {
+        private void OnDestroy() {
             if (_currentBehaviour == null)
                 return;
 
@@ -71,8 +67,7 @@ namespace Content.Features.AIModule.Scripts.Entity
             _currentBehaviour.OnBehaviorEnd -= OnBehaviourEnded;
         }
 
-        public void SetBehaviour(IEntityBehaviour entityBehaviour)
-        {
+        public void SetBehaviour(IEntityBehaviour entityBehaviour) {
             if (_currentBehaviour != null)
             {
                 _currentBehaviour.Stop();
@@ -91,8 +86,7 @@ namespace Content.Features.AIModule.Scripts.Entity
         private void OnBehaviourEnded() =>
             SetDefaultBehaviour();
 
-        private void SetDefaultBehaviour()
-        {
+        private void SetDefaultBehaviour() {
             if (_isAggressive)
                 SetBehaviour(_entityBehaviourFactory.GetEntityBehaviour<IdleSearchForTargetsEntityBehaviour>());
             else

@@ -4,8 +4,7 @@ using UnityEngine;
 using Zenject;
 
 namespace Content.Features.DamageablesModule.Scripts {
-    public class MonoDamageable : MonoBehaviour, IDamageable
-    {
+    public class MonoDamageable : MonoBehaviour, IDamageable {
         [SerializeField] public float _health;
         [SerializeField] private DamageableType _damageableType;
         [SerializeField] private AttackInteractable _attackInteractable;
@@ -13,8 +12,7 @@ namespace Content.Features.DamageablesModule.Scripts {
         private HealthProvider _healthProvider;
 
         [Inject]
-        public void Construct(HealthProvider healthProvider)
-        {
+        public void InjectDependencies(HealthProvider healthProvider) {
             _healthProvider = healthProvider;
         }
 
