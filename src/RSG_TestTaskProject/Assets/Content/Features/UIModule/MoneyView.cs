@@ -8,6 +8,6 @@ namespace Content.Features.UIModule
         [SerializeField] private TextMeshProUGUI _text;
         
         public void SetMoney(float money) => 
-            _text.text = $"Money: {money}";
+            _text.text = $"Gold: {money}";
     }
 }
