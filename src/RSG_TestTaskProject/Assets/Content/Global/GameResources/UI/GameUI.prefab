@@ -435,6 +435,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1673129352507358322, guid: 039928b97e0b34a4a8362be2374d21ba, type: 3}
+      propertyPath: m_margin.w
+      value: -153.17972
+      objectReference: {fileID: 0}
     - target: {fileID: 8345461718176701726, guid: 039928b97e0b34a4a8362be2374d21ba, type: 3}
       propertyPath: m_Name
       value: HealPotions
@@ -576,6 +580,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5665633143434349687, guid: 23457712c3d0bd24290fda58f556f136, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8448603764955437081, guid: 23457712c3d0bd24290fda58f556f136, type: 3}
+      propertyPath: m_Maskable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8448603764955437081, guid: 23457712c3d0bd24290fda58f556f136, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -605,16 +621,28 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1644291916046569080}
     m_Modifications:
-    - target: {fileID: 3555116793670332946, guid: fcc22cb058561f24bbeca4d440f66d32, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
+    - target: {fileID: 1510848466934702318, guid: fcc22cb058561f24bbeca4d440f66d32, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510848466934702318, guid: fcc22cb058561f24bbeca4d440f66d32, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510848466934702318, guid: fcc22cb058561f24bbeca4d440f66d32, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510848466934702318, guid: fcc22cb058561f24bbeca4d440f66d32, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510848466934702318, guid: fcc22cb058561f24bbeca4d440f66d32, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3555116793670332946, guid: fcc22cb058561f24bbeca4d440f66d32, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3555116793670332946, guid: fcc22cb058561f24bbeca4d440f66d32, type: 3}
-      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3555116793670332946, guid: fcc22cb058561f24bbeca4d440f66d32, type: 3}
@@ -626,20 +654,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3555116793670332946, guid: fcc22cb058561f24bbeca4d440f66d32, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3555116793670332946, guid: fcc22cb058561f24bbeca4d440f66d32, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3555116793670332946, guid: fcc22cb058561f24bbeca4d440f66d32, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5207602435047824831, guid: fcc22cb058561f24bbeca4d440f66d32, type: 3}
-      propertyPath: m_fontSize
-      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 7536542390241643560, guid: fcc22cb058561f24bbeca4d440f66d32, type: 3}
       propertyPath: m_Pivot.x
@@ -667,7 +687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7536542390241643560, guid: fcc22cb058561f24bbeca4d440f66d32, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 450
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 7536542390241643560, guid: fcc22cb058561f24bbeca4d440f66d32, type: 3}
       propertyPath: m_SizeDelta.y
