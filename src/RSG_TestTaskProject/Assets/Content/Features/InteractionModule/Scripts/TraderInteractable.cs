@@ -1,5 +1,4 @@
-﻿using Content.Features.AIModule.Scripts;
-using Content.Features.AIModule.Scripts.Entity;
+﻿using Content.Features.AIModule.Scripts.Entity;
 using Content.Features.AIModule.Scripts.Entity.EntityBehaviours;
 using Content.Features.ShopModule.Scripts;
 using UnityEngine;

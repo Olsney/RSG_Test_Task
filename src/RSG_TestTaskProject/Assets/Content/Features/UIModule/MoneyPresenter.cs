@@ -1,6 +1,4 @@
-﻿using System;
-using Content.Features.PlayerData.Scripts;
-using Zenject;
+﻿using Content.Features.PlayerData.Scripts;
 
 namespace Content.Features.UIModule
 {

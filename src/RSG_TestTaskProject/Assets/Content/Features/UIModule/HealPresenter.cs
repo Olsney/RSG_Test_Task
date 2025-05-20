@@ -1,9 +1,7 @@
-﻿using System;
-using Content.Features.DamageablesModule.Scripts;
+﻿using Content.Features.DamageablesModule.Scripts;
 using Content.Features.StorageModule.Scripts;
 using System.Linq;
 using Core.InputModule;
-using Zenject;
 
 namespace Content.Features.UIModule
 {

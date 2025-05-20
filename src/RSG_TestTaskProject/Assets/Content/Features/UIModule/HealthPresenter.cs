@@ -1,6 +1,4 @@
-using System;
 using Content.Features.DamageablesModule.Scripts;
-using Zenject;
 
 namespace Content.Features.UIModule
 {

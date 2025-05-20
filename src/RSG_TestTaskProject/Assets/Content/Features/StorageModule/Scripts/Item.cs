@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 namespace Content.Features.StorageModule.Scripts {
     public class Item {

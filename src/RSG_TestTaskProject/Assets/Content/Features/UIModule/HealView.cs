@@ -2,8 +2,6 @@
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Content.Features.UIModule
@@ -18,8 +16,12 @@ namespace Content.Features.UIModule
         
         private Tween _countTween;
         
-        private void Awake() {
-            _healButton.onClick.AddListener(() => HealClicked?.Invoke());
+        private void OnEnable() {
+            _healButton.onClick.AddListener(OnButtonClicked);
+        }
+
+        private void OnDisable() {
+            _healButton.onClick.RemoveListener(OnButtonClicked);
         }
 
         public void SetHealPotionsInfo(int count) {
@@ -33,6 +35,9 @@ namespace Content.Features.UIModule
 
             _healButton.interactable = IsHealToUseExist(count);
         }
+
+        private void OnButtonClicked() => 
+            HealClicked?.Invoke();
 
         private static bool IsHealToUseExist(int count) => 
             count > 0;

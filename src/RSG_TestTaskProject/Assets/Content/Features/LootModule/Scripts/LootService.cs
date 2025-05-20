@@ -1,5 +1,4 @@
 ﻿using Content.Features.StorageModule.Scripts;
-using UnityEngine;
 
 namespace Content.Features.LootModule.Scripts
 {

@@ -1,6 +1,4 @@
-﻿using System;
-using Content.Features.StorageModule.Scripts;
-using Zenject;
+﻿using Content.Features.StorageModule.Scripts;
 
 namespace Content.Features.UIModule
 {

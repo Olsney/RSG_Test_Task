@@ -1,5 +1,4 @@
-﻿using System;
-using Content.Features.AIModule.Scripts.Entity.EntityBehaviours;
+﻿using Content.Features.AIModule.Scripts.Entity.EntityBehaviours;
 using Content.Features.DamageablesModule.Scripts;
 using Content.Features.StorageModule.Scripts;
 using UnityEngine;
