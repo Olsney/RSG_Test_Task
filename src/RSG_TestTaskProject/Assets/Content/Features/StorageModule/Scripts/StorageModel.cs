@@ -5,6 +5,8 @@ namespace Content.Features.StorageModule.Scripts
 {
     public class StorageModel
     {
+        private const float MAX_WEIGHT = 30f;
+        
         private readonly List<Item> _items = new List<Item>();
         private readonly float _maxWeight;
 
@@ -12,7 +14,7 @@ namespace Content.Features.StorageModule.Scripts
 
         public StorageModel()
         {
-            _maxWeight = 30f;
+            _maxWeight = MAX_WEIGHT;
             _currentWeight = 0f;
         }
 
