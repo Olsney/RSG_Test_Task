@@ -13,13 +13,13 @@ namespace Content.Features.UIModule
             _healthProvider = healthProvider;
             
             _healthProvider.HealthChanged += OnHealthChanged;
-            UpdateView(_healthProvider.CurrentHealth);
+            UpdateView(_healthProvider.CurrentHealth, _healthProvider.MaxHealth);
         }
 
         private void OnHealthChanged(float health) =>
-            UpdateView(health);
+            UpdateView(health, _healthProvider.MaxHealth);
 
-        private void UpdateView(float health) => 
-            _view.SetHealth(health);
+        private void UpdateView(float health, float maxHealth) => 
+            _view.SetHealth(health, maxHealth);
     }
 }

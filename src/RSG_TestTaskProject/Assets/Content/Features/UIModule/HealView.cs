@@ -20,7 +20,7 @@ namespace Content.Features.UIModule
 
         public void SetHealPotionsInfo(int count)
         {
-            _countText.text = $"Potions: {count}";
+            _countText.text = $"{count}";
             _healButton.interactable = IsHealToUseExist(count);
         }
 
