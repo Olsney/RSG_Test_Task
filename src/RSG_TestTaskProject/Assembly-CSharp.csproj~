@@ -106,6 +106,7 @@
     <Compile Include="Assets\Core\AssetLoaderModule\Core\Scripts\ResourceAssetLoaderService.cs" />
     <Compile Include="Assets\Content\Features\UIModule\UIInstaller.cs" />
     <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\EntityBehaviours\MoveToPointEntityBehaviour.cs" />
+    <Compile Include="Assets\Content\Features\UIModule\HealPresenter.cs" />
     <Compile Include="Assets\Content\Features\StorageModule\Scripts\IStorage.cs" />
     <Compile Include="Assets\Content\Features\StorageModule\Scripts\ItemConfiguration.cs" />
     <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\PlayerEntityModel.cs" />
@@ -168,6 +169,7 @@
     <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\EntityDataService.cs" />
     <Compile Include="Assets\Content\Features\StorageModule\Scripts\StorageFactory.cs" />
     <Compile Include="Assets\Content\Features\AIModule\Scripts\Entity\EntityBehaviours\IdleSearchForTargetsEntityBehaviour.cs" />
+    <Compile Include="Assets\Content\Features\ShopModule\Scripts\BuyPotionInteractable.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile-2-Pass.shader" />
