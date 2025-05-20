@@ -11,9 +11,9 @@ namespace Content.Features.UIModule
         
         public void SetItemInfo(int itemsCount, float currentWeight, float maxWeight)
         {
-            _itemCountText.text = $"Items count: {itemsCount};" +
-                                  $"\nCurrent weight: {currentWeight}" +
-                                  $"\nMax weight: {maxWeight}";
+            _itemCountText.text = $"Items: {itemsCount}";
+            _currentWeightText.text = $"Weight: {currentWeight}";
+            _maxWeightText.text = $"Max: {maxWeight}";
         }
     }
 }
