@@ -14,16 +14,12 @@ namespace Content.Features.UIModule
         [SerializeField] private Button _healButton;
         [SerializeField] private TextMeshProUGUI _countText;
 
-        public event UnityAction HealClicked;
+        public event Action HealClicked;
         
         private Tween _countTween;
         
-        private void OnEnable() {
-            _healButton.onClick.AddListener(HealClicked);
-        }
-
-        private void OnDisable() {
-            _healButton.onClick.RemoveListener(HealClicked);
+        private void Awake() {
+            _healButton.onClick.AddListener(() => HealClicked?.Invoke());
         }
 
         public void SetHealPotionsInfo(int count) {

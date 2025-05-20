@@ -37,8 +37,10 @@ namespace Content.Features.UIModule
             _storage.OnItemRemoved -= OnItemsChanged;
         }
 
-        private void OnHealUsed() => 
+        private void OnHealUsed()
+        {
             UsePotion();
+        }
 
         private void UsePotion() {
             Item potion = _storage.GetAllItems().FirstOrDefault(i => i.ItemType == ItemType.Potion);
