@@ -1,7 +1,0 @@
-﻿namespace Content.Features.UIModule
-{
-    public class UIInventoryView
-    {
-        
-    }
-}
