@@ -1,5 +1,6 @@
 using System;
 using Content.Features.InteractionModule;
+using Content.Features.InteractionModule.Scripts;
 using UnityEngine;
 
 namespace Content.Features.DamageablesModule.Scripts {

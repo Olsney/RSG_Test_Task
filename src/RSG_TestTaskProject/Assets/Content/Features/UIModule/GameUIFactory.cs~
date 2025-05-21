@@ -5,7 +5,6 @@ using Content.Features.DamageablesModule.Scripts;
 using Content.Features.PlayerData.Scripts;
 using Content.Features.StorageModule.Scripts;
 using Core.InputModule;
-using Core.InputModule.Scripts;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using Zenject;

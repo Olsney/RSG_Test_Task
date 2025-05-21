@@ -3,7 +3,7 @@ using Content.Features.AIModule.Scripts.Entity.EntityBehaviours;
 using UnityEngine;
 using Zenject;
 
-namespace Content.Features.InteractionModule {
+namespace Content.Features.InteractionModule.Scripts {
     public class TeleportToSurfaceInteractable : MonoBehaviour, IInteractable {
         private IEntityBehaviourFactory _entityBehaviourFactory;
         

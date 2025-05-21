@@ -1,11 +1,10 @@
-﻿using Content.Features.AIModule.Scripts;
-using Content.Features.AIModule.Scripts.Entity;
+﻿using Content.Features.AIModule.Scripts.Entity;
 using Content.Features.AIModule.Scripts.Entity.EntityBehaviours;
 using Content.Features.LootModule.Scripts;
 using UnityEngine;
 using Zenject;
 
-namespace Content.Features.InteractionModule {
+namespace Content.Features.InteractionModule.Scripts {
     public class LootInteractable : MonoBehaviour, IInteractable {
         [SerializeField] private Loot _loot;
         private IEntityBehaviourFactory _entityBehaviourFactory;

@@ -1,9 +1,9 @@
-﻿using Content.Features.PrefabSpawner;
+﻿using Content.Features.PrefabSpawner.Scripts;
 using Global.Scripts.Generated;
 using UnityEngine;
 using Zenject;
 
-namespace Content.Features.LootModule.Scripts {
+namespace Content.Features.AIModule.Scripts.Entity {
     public class SellerSpawner : MonoBehaviour {
         private IPrefabsFactory _prefabsFactory;
 

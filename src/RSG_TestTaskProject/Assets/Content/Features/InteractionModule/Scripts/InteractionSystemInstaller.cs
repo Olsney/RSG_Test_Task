@@ -2,7 +2,7 @@
 using Global.Scripts.Generated;
 using Zenject;
 
-namespace Content.Features.InteractionModule {
+namespace Content.Features.InteractionModule.Scripts {
     public class InteractionSystemInstaller : Installer<InteractionSystemInstaller> {
         public override void InstallBindings() {
             IAddressablesAssetLoaderService addressablesAssetLoaderService = Container.Resolve<IAddressablesAssetLoaderService>();

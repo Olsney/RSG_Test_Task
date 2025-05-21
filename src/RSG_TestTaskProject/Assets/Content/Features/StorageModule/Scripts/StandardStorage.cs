@@ -3,8 +3,7 @@ using System.Collections.Generic;
 
 namespace Content.Features.StorageModule.Scripts
 {
-    public class StandardStorage : IStorage
-    {
+    public class StandardStorage : IStorage {
         private List<Item> _items = new List<Item>();
         private readonly StorageModel _model;
 

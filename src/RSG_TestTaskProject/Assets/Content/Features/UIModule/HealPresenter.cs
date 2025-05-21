@@ -2,6 +2,7 @@
 using Content.Features.StorageModule.Scripts;
 using System.Linq;
 using Core.InputModule;
+using Core.InputModule.Scripts;
 
 namespace Content.Features.UIModule
 {
@@ -15,8 +16,6 @@ namespace Content.Features.UIModule
             _storage = storage;
             _healthProvider = healthProvider;
             _inputListener = inputListener;
-
-
         }
 
         public override void Initialize() {
@@ -35,8 +34,7 @@ namespace Content.Features.UIModule
             _storage.OnItemRemoved -= OnItemsChanged;
         }
 
-        private void OnHealUsed()
-        {
+        private void OnHealUsed() {
             UsePotion();
         }
 
@@ -46,8 +44,7 @@ namespace Content.Features.UIModule
             if (potion == null || potion.HealValue <= 0)
                 return;
 
-            if (GetHealResult(potion) > _healthProvider.MaxHealth)
-            {
+            if (GetHealResult(potion) > _healthProvider.MaxHealth) {
                 _healthProvider.SetHealth(_healthProvider.MaxHealth);
                 _storage.RemoveItem(potion);
 
@@ -75,8 +72,7 @@ namespace Content.Features.UIModule
             int count = 0;
 
             
-            foreach (Item item in _storage.GetAllItems())
-            {
+            foreach (Item item in _storage.GetAllItems()) {
                 if (item.ItemType == ItemType.Potion)
                     count++;
             }

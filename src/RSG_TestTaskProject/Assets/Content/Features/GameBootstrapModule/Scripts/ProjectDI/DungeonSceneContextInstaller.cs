@@ -1,5 +1,5 @@
 using Content.Features.PrefabSpawner;
-using Content.Features.UIModule;
+using Content.Features.PrefabSpawner.Scripts;
 using UnityEngine;
 using Zenject;
 

@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
 
-namespace Core.InputModule {
+namespace Core.InputModule.Scripts {
     public class InputListener : IInputListener, IInitializable, IDisposable {
         private const string PLAYER_ACTION_MAP = "Player";
         private const string INTERACTION_ACTION = "Interaction";

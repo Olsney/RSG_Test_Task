@@ -4,7 +4,7 @@ using Content.Features.ShopModule.Scripts;
 using UnityEngine;
 using Zenject;
 
-namespace Content.Features.InteractionModule {
+namespace Content.Features.InteractionModule.Scripts {
     public class TraderInteractable : MonoBehaviour, IInteractable {
         [SerializeField] private Trader trader;
         private IEntityBehaviourFactory _entityBehaviourFactory;

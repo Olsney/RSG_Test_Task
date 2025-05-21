@@ -1,5 +1,6 @@
 ﻿using Content.Features.AIModule.Scripts.Entity;
 using Content.Features.InteractionModule;
+using Content.Features.InteractionModule.Scripts;
 using Content.Features.PlayerData.Scripts;
 using Content.Features.StorageModule.Scripts;
 using UnityEngine;

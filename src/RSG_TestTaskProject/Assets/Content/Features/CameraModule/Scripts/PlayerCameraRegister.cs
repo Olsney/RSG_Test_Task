@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Zenject;
 
-namespace Content.Features.CameraModule {
+namespace Content.Features.CameraModule.Scripts {
     public class PlayerCameraRegister : MonoBehaviour {
         [SerializeField] private Camera _camera;
         private PlayerCameraModel _playerCameraModel;

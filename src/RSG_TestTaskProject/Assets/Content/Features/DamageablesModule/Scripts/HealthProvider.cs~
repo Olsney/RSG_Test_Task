@@ -21,7 +21,8 @@ namespace Content.Features.DamageablesModule.Scripts
             SetHealth(CurrentHealth);
         }
         
-        public void SetHealth(float health) {
+        public void SetHealth(float health)
+        {
             if (health <= 0)
                 return;
             

@@ -3,7 +3,6 @@ using Content.Features.AIModule.Scripts.Entity;
 using Content.Features.AIModule.Scripts.Entity.EntityBehaviours;
 using Content.Features.CameraModule.Scripts;
 using Core.InputModule;
-using Core.InputModule.Scripts;
 using UnityEngine;
 using Zenject;
 
