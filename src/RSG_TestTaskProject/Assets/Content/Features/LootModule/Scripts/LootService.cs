@@ -1,15 +1,26 @@
 ﻿using Content.Features.StorageModule.Scripts;
 
-namespace Content.Features.LootModule.Scripts {
+namespace Content.Features.LootModule.Scripts
+{
     public class LootService : ILootService {
         private IItemFactory _itemFactory;
 
         public LootService(IItemFactory itemFactory) =>
             _itemFactory = itemFactory;
 
-        public void CollectLoot(Loot loot, IStorage storage) {
+        public int CollectLoot(Loot loot, IStorage storage) {
+            int collectedCount = 0;
+
             foreach (ItemType itemType in loot.GetItemsInLoot())
-                storage.AddItem(_itemFactory.GetItem(itemType));
+            {
+                if (IsItemCollected(storage, itemType)) 
+                    collectedCount++;
+            }
+
+            return collectedCount;
         }
+
+        private bool IsItemCollected(IStorage storage, ItemType itemType) =>
+            storage.TryAddItem(_itemFactory.GetItem(itemType));
     }
 }

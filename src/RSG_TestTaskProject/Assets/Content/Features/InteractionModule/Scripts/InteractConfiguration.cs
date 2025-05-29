@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Content.Features.InteractionModule {
+namespace Content.Features.InteractionModule.Scripts {
     [CreateAssetMenu(fileName = nameof(InteractConfiguration) + "_Default", menuName = "Configurations/InteractionModule/" + nameof(InteractConfiguration))]
     public class InteractConfiguration : ScriptableObject {
         [Header("Raycast")]

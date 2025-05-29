@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Content.Features.CameraModule {
+namespace Content.Features.CameraModule.Scripts {
     public class PlayerCameraModel {
         private Camera _currentCamera;
         

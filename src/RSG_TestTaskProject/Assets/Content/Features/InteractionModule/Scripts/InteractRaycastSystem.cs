@@ -1,12 +1,13 @@
 ﻿using System;
 using Content.Features.AIModule.Scripts.Entity;
 using Content.Features.AIModule.Scripts.Entity.EntityBehaviours;
-using Content.Features.CameraModule;
+using Content.Features.CameraModule.Scripts;
 using Core.InputModule;
+using Core.InputModule.Scripts;
 using UnityEngine;
 using Zenject;
 
-namespace Content.Features.InteractionModule {
+namespace Content.Features.InteractionModule.Scripts {
     internal class InteractRaycastSystem : IInitializable, IDisposable {
         private const float MAX_DISTANCE = 1000;
         private readonly IInputListener _inputListener;

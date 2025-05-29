@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Content.Features.PrefabSpawner {
+namespace Content.Features.PrefabSpawner.Scripts {
     [Serializable]
     public struct PrefabData {
         [field: SerializeField] public string Name { get; private set; }

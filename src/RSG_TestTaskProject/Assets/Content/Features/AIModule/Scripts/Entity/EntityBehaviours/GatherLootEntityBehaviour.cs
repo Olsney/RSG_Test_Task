@@ -2,7 +2,8 @@
 using Content.Features.LootModule.Scripts;
 using UnityEngine;
 
-namespace Content.Features.AIModule.Scripts.Entity.EntityBehaviours {
+namespace Content.Features.AIModule.Scripts.Entity.EntityBehaviours
+{
     public class GatherLootEntityBehaviour : IEntityBehaviour {
         private EntityContext _entityContext;
         private Loot _loot;
@@ -24,13 +25,15 @@ namespace Content.Features.AIModule.Scripts.Entity.EntityBehaviours {
         }
 
         public void Process() {
-            if(IsNearTheTarget())
+            if (IsNearTheTarget())
                 CollectLoot();
             else
                 MoveToTarget();
         }
 
-        public void Stop() { }
+        public void Stop()
+        {
+        }
 
         private void MoveToTarget() =>
             _entityContext.NavMeshAgent.SetDestination(_loot.transform.position);
@@ -39,13 +42,20 @@ namespace Content.Features.AIModule.Scripts.Entity.EntityBehaviours {
             _entityContext.NavMeshAgent.ResetPath();
 
         private bool IsNearTheTarget() =>
-            Vector3.Distance(_entityContext.EntityDamageable.Position, _loot.transform.position) <= _entityContext.EntityData.InteractDistance;
+            Vector3.Distance(_entityContext.EntityDamageable.Position, _loot.transform.position) <=
+            _entityContext.EntityData.InteractDistance;
 
         private void CollectLoot() {
-            _lootService.CollectLoot(_loot, _entityContext.Storage);
-            _loot.DestroyLoot();
+            int collectedLootCount = _lootService.CollectLoot(_loot, _entityContext.Storage);
+
+            if (IsCollectedLootExist(collectedLootCount))
+                _loot.DestroyLoot();
+            
             StopMoving();
             OnBehaviorEnd?.Invoke();
         }
+
+        private static bool IsCollectedLootExist(int collectedLootCount) => 
+            collectedLootCount > 0;
     }
 }

@@ -1,10 +1,14 @@
 using Content.Features.AIModule.Scripts.Entity;
 using Content.Features.StorageModule.Scripts;
 using Content.Features.CameraModule;
+using Content.Features.CameraModule.Scripts;
 using Content.Features.InteractionModule;
+using Content.Features.InteractionModule.Scripts;
 using Content.Features.LootModule.Scripts;
 using Content.Features.PlayerData.Scripts;
 using Content.Features.PrefabSpawner;
+using Content.Features.PrefabSpawner.Scripts;
+using Content.Features.UIModule;
 using UnityEngine;
 using Zenject;
 
@@ -20,6 +24,7 @@ namespace Content.Features.GameBootstrapModule.Scripts.ProjectDI {
             InteractionSystemInstaller.Install(Container);
             AIInstaller.Install(Container);
             LootInstaller.Install(Container);
+            UIInstaller.Install(Container);
         }
     }
 }

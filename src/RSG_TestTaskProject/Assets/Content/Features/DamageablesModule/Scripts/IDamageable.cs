@@ -1,5 +1,6 @@
 using System;
 using Content.Features.InteractionModule;
+using Content.Features.InteractionModule.Scripts;
 using UnityEngine;
 
 namespace Content.Features.DamageablesModule.Scripts {
@@ -13,5 +14,6 @@ namespace Content.Features.DamageablesModule.Scripts {
         public event Action OnKilled;
         public void Damage(float damage);
         public void SetHealth(float health);
+        public float GetHealth();
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Content.Features.StorageModule.Scripts {
     [Serializable]
@@ -9,5 +8,7 @@ namespace Content.Features.StorageModule.Scripts {
         public string Name;
         public Sprite Icon;
         public int Price;
+        public float Weight;
+        public float HealValue;
     }
 }

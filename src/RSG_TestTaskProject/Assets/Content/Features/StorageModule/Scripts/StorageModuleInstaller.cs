@@ -13,10 +13,9 @@ namespace Content.Features.StorageModule.Scripts {
             Container.Bind<IItemFactory>()
                 .To<ItemFactory>()
                 .AsSingle();
-        
-            Container.Bind<IStorageFactory>()
-                .To<StorageFactory>()
-                .AsSingle();
+            
+            Container.Bind<StorageModel>().AsSingle();
+            Container.Bind<IStorage>().To<StandardStorage>().AsSingle();
         }
     }
 }

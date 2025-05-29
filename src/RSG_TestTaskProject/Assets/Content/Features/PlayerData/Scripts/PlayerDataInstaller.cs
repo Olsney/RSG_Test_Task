@@ -5,6 +5,9 @@ namespace Content.Features.PlayerData.Scripts {
         public override void InstallBindings() {
             Container.Bind<PlayerTransformModel>()
                      .AsSingle();
+            
+            Container.Bind<MoneyModel>()
+                     .AsSingle();
         }
     }
 }

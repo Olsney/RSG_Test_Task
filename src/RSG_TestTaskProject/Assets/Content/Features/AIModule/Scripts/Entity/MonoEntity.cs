@@ -4,31 +4,54 @@ using Content.Features.StorageModule.Scripts;
 using UnityEngine;
 using Zenject;
 
-namespace Content.Features.AIModule.Scripts.Entity {
+namespace Content.Features.AIModule.Scripts.Entity
+{
     public class MonoEntity : MonoBehaviour, IEntity {
         [SerializeField] private EntityContext _entityContext;
         [SerializeField] private EntityType _entityType;
         [SerializeField] private bool _isAggressive;
-        
+
+        private HealthProvider _healthProvider;
+
         private IEntityBehaviour _currentBehaviour;
+
         private IEntityDataService _entityDataService;
-        private IStorageFactory _storageFactory;
+
+        private IStorage _storage;
         private IEntityBehaviourFactory _entityBehaviourFactory;
 
         [Inject]
-        public void InjectDependencies(IEntityDataService entityDataService, IStorageFactory storageFactory, IEntityBehaviourFactory entityBehaviourFactory) {
+        public void InjectDependencies(
+            IEntityDataService entityDataService,
+            IStorage storage,
+            IEntityBehaviourFactory entityBehaviourFactory,
+            HealthProvider healthProvider
+        ) {
             _entityBehaviourFactory = entityBehaviourFactory;
-            _storageFactory = storageFactory;
+            _storage = storage;
             _entityDataService = entityDataService;
+            _healthProvider = healthProvider;
         }
 
-        private void Start() {
+        private void Awake() {
             _entityContext.Entity = this;
             _entityContext.EntityDamageable = GetComponent<IDamageable>();
             _entityContext.EntityData = _entityDataService.GetEntityData(_entityType);
-            _entityContext.EntityDamageable.SetHealth(_entityContext.EntityData.StartHealth);
-            _entityContext.Storage = _storageFactory.GetStorage();
-            
+
+
+            if (_entityType == EntityType.Player)
+            {
+                _healthProvider.Initialize(_entityContext.EntityData.StartHealth);
+
+                _entityContext.EntityDamageable.SetHealth(_healthProvider.CurrentHealth);
+            }
+            else
+            {
+                _entityContext.EntityDamageable.SetHealth(_entityContext.EntityData.StartHealth);
+            }
+
+            _entityContext.Storage = _storage;
+
             SetDefaultBehaviour();
         }
 
@@ -44,15 +67,20 @@ namespace Content.Features.AIModule.Scripts.Entity {
         }
 
         public void SetBehaviour(IEntityBehaviour entityBehaviour) {
-            if(_currentBehaviour != null) {
+            if (_currentBehaviour != null)
+            {
                 _currentBehaviour.Stop();
                 _currentBehaviour.OnBehaviorEnd -= OnBehaviourEnded;
             }
+
             _currentBehaviour = entityBehaviour;
             _currentBehaviour.OnBehaviorEnd += OnBehaviourEnded;
             _currentBehaviour.InitContext(_entityContext);
             _currentBehaviour.Start();
         }
+
+        public EntityContext GetContext() =>
+            _entityContext;
 
         private void OnBehaviourEnded() =>
             SetDefaultBehaviour();

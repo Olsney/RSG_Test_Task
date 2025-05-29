@@ -3,7 +3,7 @@ using Unity.Cinemachine;
 using UnityEngine;
 using Zenject;
 
-namespace Content.Features.CameraModule {
+namespace Content.Features.CameraModule.Scripts {
     public class CinemachineCameraSetup : MonoBehaviour {
         [SerializeField] private CinemachineCamera _cinemachineCamera;
         private PlayerTransformModel _playerTransformModel;

@@ -2,7 +2,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace Content.Features.PrefabSpawner {
+namespace Content.Features.PrefabSpawner.Scripts {
     public class PrefabsFactory : IPrefabsFactory {
         private readonly IAddressablesAssetLoaderService _addressablesAssetLoaderService;
         private readonly DiContainer _diContainer;

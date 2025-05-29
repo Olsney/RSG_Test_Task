@@ -2,7 +2,7 @@
 using UnityEngine.InputSystem;
 using Zenject;
 
-namespace Core.InputModule {
+namespace Core.InputModule.Scripts {
     [CreateAssetMenu(menuName = "Configurations/InputModule/" + nameof(InputInstaller), fileName = nameof(InputInstaller) + "_Default", order = 0)]
     internal class InputInstaller : ScriptableObjectInstaller {
         [SerializeField] private InputActionAsset _inputActionAsset;
