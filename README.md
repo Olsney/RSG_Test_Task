@@ -105,6 +105,15 @@ This project showcases my implementation of all the required features along with
 * Така логіка вже є у ворогів
 ---
 
+### 📚 Додаткові вимоги
+
+- Вивчити документацію з плагіна **Zenject**
+- Вивчити документацію по **Addressables** — в проекті потрібно їх використовувати
+- Вивчити документацію по самому **проекту**
+
+
+---
+
 ## 🧩 Technologies & Extras
 
 - 🎯 **MVP architecture** for UI
